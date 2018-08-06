@@ -1,2 +1,14 @@
 <h1>Preps#index</h1>
 <p>Find me in app/views/preps/index.html.erb</p>
+<% @preps.each do |prep| %>
+  <ul>
+    <li>
+      <%= link_to prep_path(prep) do %>
+        <h3><%= prep.name %> </h3>
+      <% end %>
+      <p><%= prep.meal %></p>
+      <p><%= prep.time %></p>
+      <p><%= prep.location %></p>
+    </li>
+  </ul>
+<% end %>

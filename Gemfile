@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem "pundit"
+gem 'faker'
 
 
 group :development do
