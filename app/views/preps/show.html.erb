@@ -6,3 +6,8 @@
 <p>Max # of Participants: <%= @prep.max_participants %></p>
 <p><%= @prep.time %></p>
 <p><%= @prep.location %></p>
+<%= link_to "Home", preps_path %>
+<%= link_to "Edit", edit_prep_path(@prep) %>
+<%= link_to "Delete", prep_path(@prep),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
