@@ -1,0 +1,35 @@
+.card_prep-body {
+  width: 397px;
+  height: 364px;
+  border-radius: 15px;
+  background-color: #F6F3F0;
+  position: relative;
+  z-index: 1;
+}
+
+.card_prep-photo {
+  top: -33px;
+  left: 16px;
+  background-size: cover;
+  position: absolute;
+  width: 362px;
+  height: 210px;
+  background-color: #F1574B;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.card_container {
+  padding: 20px;
+}
+
+.card_avatar-sm {
+  right: 40px;
+  top: 151px;
+  height: 49.35px;
+  width: 49.35px;
+  border-radius: 50%;
+  border: solid white 4px;
+  z-index: 3;
+  position: absolute;
+}
