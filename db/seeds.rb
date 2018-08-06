@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# Seed for Meal Prep Events...
+
+Prep.destroy_all
+puts "Deleted all prior preps"
+
+10.times do
+  @prep = Prep.new(
+    name: "",
+    description: "",
+    max_participants: "",
+    meal: "",
+    time: "",
+    location: ""
+  )
+  @prep.user = User.create(
+    email: "",
+    name: "Test",
+
+  )
