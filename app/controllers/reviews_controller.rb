@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(params[:review])
+    @review = Review.new(review_params)
     @review.booking = Booking.find(params[:id])
     @review.save
     redirect_to prep_path(@review.prep)
@@ -22,5 +22,11 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to root_path
+  end
+
+  private
+
+  def reviews_params
+    params.require(:review).permit(:content, :rating)
   end
 end
