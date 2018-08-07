@@ -6,29 +6,37 @@
   <a href="#" class="btn_skinny">Skinny button</a>
   <a href="#" class="btn_square-red">Square button</a>
   <a href="#" class="btn_square-faded">Faded button</a>
-  <h1>hello</h1>
-  <p>Find me in app/views/preps/index.html.erb</p>
-  <% @preps.each do |prep| %>
-    <ul>
-      <li>
-        <%= link_to prep_path(prep) do %>
-          <h3><%= prep.name %> </h3>
-        <% end %>
-        <p><%= prep.meal %></p>
-        <p><%= prep.time %></p>
-        <p><%= prep.location %></p>
-      </li>
-    </ul>
-  <% end %>
+  <br>
+  <br>
   <br>
   <br>
   <div class="card_container">
     <div class="card_prep-body">
       <div class="card_prep-photo" style="background-image: url('https://greatist.com/sites/default/files/Chicken%20Meal%20Prep.jpg')">
       </div>
-      <div class="card_avatar-sm" style="background-image: url('https://www.simplemost.com/wp-content/uploads/2018/05/102037595_adam-sandler-2010-750x500.jpg')"></div>
+      <div class="card_avatar-sm" style="background-image: url('https://thumbnails.aaehq.com/t_face_s70/https://speakerdata2.s3.amazonaws.com/photo/image/801143/adam-sandler-1.png'); background-size: cover"></div>
+      <div class="card_tags">
+        tag1 | tag2 | tag3
+      </div>
+      <div class="card_prep-title">
+        <h1><strong>Meal prep description</strong></h1>
+      </div>
     </div>
   </div>
   <br>
   <br>
 </div>
+<h1>hello</h1>
+<p>Find me in app/views/preps/index.html.erb</p>
+<% @preps.each do |prep| %>
+  <ul>
+    <li>
+      <%= link_to prep_path(prep) do %>
+        <h3><%= prep.name %> </h3>
+      <% end %>
+      <p><%= prep.meal %></p>
+      <p><%= prep.time %></p>
+      <p><%= prep.location %></p>
+    </li>
+  </ul>
+<% end %>
