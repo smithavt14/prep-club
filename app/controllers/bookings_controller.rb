@@ -14,11 +14,12 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @prep = Prep.find(params[:prep_id])
     @booking = Booking.new
     @booking.user = current_user
     @booking.prep = Prep.find(params[:prep_id])
     authorize @booking
-    @booking.save
+    @prep.bookings.count < @prep.max_participants ? @booking.save : flash[:alert] = "This event is already at full capacity. Please try again later."
     redirect_to prep_path(@booking.prep)
   end
 
