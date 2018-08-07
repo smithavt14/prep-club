@@ -14,7 +14,7 @@ class PrepsController < ApplicationController
   end
 
   def create
-    @prep = Prep.new(params[:prep])
+    @prep = Prep.new(prep_params)
     @prep.user = current_user
     authorize @prep
     @prep.save
@@ -26,11 +26,13 @@ class PrepsController < ApplicationController
   end
 
   def update
-    @prep.update(params[:prep])
+    @prep.update(prep_params)
+    redirect_to prep_path(@prep)
   end
 
   def destroy
     @prep.destroy
+    authorize @prep
     redirect_to preps_path
   end
 
@@ -40,4 +42,15 @@ class PrepsController < ApplicationController
     @prep = Prep.find(params[:id])
     authorize @prep
   end
+
+  def prep_params
+    params.require(:prep).permit(:name, :description, :max_participants, :meal, :time, :location)
+  end
 end
+
+#t.string "name"
+# t.text "description"
+# t.integer "max_participants"
+# t.text "meal"
+# t.datetime "time"
+# t.string "location"

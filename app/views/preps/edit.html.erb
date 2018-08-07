@@ -1,2 +1,11 @@
 <h1>Preps#edit</h1>
 <p>Find me in app/views/preps/edit.html.erb</p>
+<%= simple_form_for (@prep) do |f| %>
+  <%= f.input :name, placeholder: "Henry McLover" %>
+  <%= f.input :description, placeholder: "Talk a bit about your event..."%>
+  <%= f.input :max_participants, placeholder: "1 - 20" %>
+  <%= f.input :time %>
+  <%= f.input :location, placeholder: "158 Julu Road, Shanghai" %>
+  <%= f.submit "Update your Event", class: "btn btn-primary" %>
+<% end %>
+<%= link_to "Back to Index", preps_path %>
