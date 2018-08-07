@@ -1,6 +1,7 @@
 <h1>Preps#show</h1>
 <p>Find me in app/views/preps/show.html.erb</p>
 <h2><%= @prep.name %></h2>
+<%= cl_image_tag @prep.photo, height: 300, width: 400, crop: :fill %>
 <p><%= @prep.meal %></p>
 <p><%= @prep.description %></p>
 <p>Max # of Participants: <%= @prep.max_participants %></p>
