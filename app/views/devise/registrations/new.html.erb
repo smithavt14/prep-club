@@ -3,6 +3,12 @@
   <%= f.error_notification %>
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :name, required: true, autofocus: true %>
+    <%= f.input :gender, required: false, autofocus: true %>
+    <%= f.input :location, required: false, autofocus: true %>
+    <%= f.input :bio, required: false, autofocus: true %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
   </div>
@@ -10,37 +16,5 @@
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
+
 <%= render "devise/shared/links" %>
-<br>
-<br>
-<h1 style="text-align: center">Elegant Contact Form</h1>
-<form class="cf">
-  <div class="half left cf">
-    <input type="text" id="input-name" placeholder="Name">
-    <input type="email" id="input-email" placeholder="Email address">
-    <input type="text" id="input-subject" placeholder="Subject">
-  </div>
-  <div class="half right cf">
-    <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
-  </div>
-  <input type="submit" value="Submit" id="input-submit">
-</form>
-<br>
-<br>
-<h2>Sign up</h2>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-  <div class="cf">
-    <div class="half left cf">
-      <%= f.input :email, label: false, required: true, autofocus: true, placeholder: 'email', label_html: { id: 'input' } %>
-      <%= f.input :password, label: false, required: true, placeholder: ("enter password, #{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input :password_confirmation, label: false, required: true, placeholder: 'confirm password' %>
-    </div>
-    <div class="half right cf">
-      <%= f.input :bio, label: false, placeholder: 'bio' %>
-    </div>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>

@@ -1,0 +1,19 @@
+<h1><%= @user.name %></h1>
+<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+<p><%= @user.email %></p>
+<p>Bio: <%= @user.bio %></p>
+<p>Location: <%= @user.location %></p>
+<p>Gender: <%= @user.gender %></p>
+<p><strong>My Bookings:</strong></p>
+<ul>
+  <% @user.bookings.each do |booking| %>
+    <li>
+      <p><%= booking.prep.name %></p>
+      <%= link_to "Check out this booking", prep_path(booking.prep) %>
+    </li>
+  <% end %>
+</ul>
+<% if @user == current_user %>
+  <%= link_to "Edit", edit_user_registration_path %>
+<% end %>
+<%= link_to "Home", preps_path %>

@@ -9,8 +9,12 @@ class ReviewPolicy < ApplicationPolicy
     true
   end
 
-  def create?
+  def new?
     true
+  end
+
+  def create?
+    record.prep.time < Time.now
   end
 
   def update?
