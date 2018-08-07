@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+.landing_banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
+
+.landing_banner-container {
+  text-align: center;
+}
+
+.landing_review {
+  height: 30vh;
+  background-color: #2A2632;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.landing_review_container {
+  position: relative;
+  color: white;
+}
