@@ -11,7 +11,17 @@
 <ul>
   <% @prep.bookings.each do |booking| %>
     <li><%= booking.user.name %>
-      <p><%= link_to "Check out their bio", user_path(booking.user) %></p>
+      <%= link_to "Check out their bio", user_path(booking.user) %>
+    </li>
+  <% end %>
+</ul>
+<p><strong>Reviews:</strong></p>
+<ul>
+  <% @prep.reviews.each do |review| %>
+    <li>
+      <p><%= review.user.name %></p>
+      <p><%= review.content %></p>
+      <p><%= review.rating %></p>
     </li>
   <% end %>
 </ul>
@@ -24,4 +34,7 @@
   <%= link_to "Delete", prep_path(@prep),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+<% end %>
+<% if @prep.check_booking_status?(current_user) && @prep.check_event_time? %>
+  <%= link_to "Review", new_prep_review_path(@prep) %>
 <% end %>
