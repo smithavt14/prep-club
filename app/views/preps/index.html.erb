@@ -1,27 +1,34 @@
-<div class="btn_fat">hello</div>
-<div class="btn_skinny">skinny</div>
-<h1>hello</h1>
-<p>Find me in app/views/preps/index.html.erb</p>
-<% @preps.each do |prep| %>
-  <ul>
-    <li>
-      <%= link_to prep_path(prep) do %>
-        <h3><%= prep.name %> </h3>
-      <% end %>
-      <p><%= prep.meal %></p>
-      <p><%= prep.time %></p>
-      <p><%= prep.location %></p>
-    </li>
-  </ul>
-<% end %>
-<br>
-<br>
-<div class="card_container">
-  <div class="card_prep-body">
-    <div class="card_prep-photo" style="background-image: url('https://greatist.com/sites/default/files/Chicken%20Meal%20Prep.jpg')">
+<div class="card_wrapper-preps">
+  <br>
+  <br>
+  <br>
+  <a href="#" class="btn_fat">Fat button</a>
+  <a href="#" class="btn_skinny">Skinny button</a>
+  <a href="#" class="btn_square-red">Square button</a>
+  <a href="#" class="btn_square-faded">Faded button</a>
+  <h1>hello</h1>
+  <p>Find me in app/views/preps/index.html.erb</p>
+  <% @preps.each do |prep| %>
+    <ul>
+      <li>
+        <%= link_to prep_path(prep) do %>
+          <h3><%= prep.name %> </h3>
+        <% end %>
+        <p><%= prep.meal %></p>
+        <p><%= prep.time %></p>
+        <p><%= prep.location %></p>
+      </li>
+    </ul>
+  <% end %>
+  <br>
+  <br>
+  <div class="card_container">
+    <div class="card_prep-body">
+      <div class="card_prep-photo" style="background-image: url('https://greatist.com/sites/default/files/Chicken%20Meal%20Prep.jpg')">
+      </div>
+      <div class="card_avatar-sm" style="background-image: url('https://www.simplemost.com/wp-content/uploads/2018/05/102037595_adam-sandler-2010-750x500.jpg')"></div>
     </div>
-    <div class="avatar_avatar-sm" style="background-image: url('https://www.simplemost.com/wp-content/uploads/2018/05/102037595_adam-sandler-2010-750x500.jpg')"></div>
   </div>
+  <br>
+  <br>
 </div>
-<br>
-<br>
