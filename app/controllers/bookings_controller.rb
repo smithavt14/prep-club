@@ -10,12 +10,14 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new
     @booking.user = current_user
-    @booking.prep = Prep.find(params[:id])
+    @booking.prep = Prep.find(params[:prep_id])
+    authorize @booking
     @booking.save
     redirect_to prep_path(@booking.prep)
   end
@@ -31,3 +33,4 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
   end
+end

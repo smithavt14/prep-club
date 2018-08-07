@@ -6,8 +6,19 @@
 <p>Max # of Participants: <%= @prep.max_participants %></p>
 <p><%= @prep.time %></p>
 <p><%= @prep.location %></p>
+<p><strong>Bookings:</strong></p>
+<ul>
+  <% @prep.bookings.each do |booking| %>
+    <li><%= booking.user.name %>
+      <p><%= link_to "Check out their bio", user_path(booking.user) %></p>
+    </li>
+  <% end %>
+</ul>
 <%= link_to "Home", preps_path %>
 <%= link_to "Edit", edit_prep_path(@prep) %>
 <%= link_to "Delete", prep_path(@prep),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+<%= link_to "Book", prep_bookings_path(@prep),
+      method: :post,
+      data: { confirm: "Book this meal prep?" } %>

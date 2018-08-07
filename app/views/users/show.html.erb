@@ -3,4 +3,13 @@
 <p>Bio: <%= @user.bio %></p>
 <p>Location: <%= @user.location %></p>
 <p>Gender: <%= @user.gender %></p>
+<p><strong>My Bookings:</strong></p>
+<ul>
+  <% @user.bookings.each do |booking| %>
+    <li>
+      <p><%= booking.prep.name %></p>
+      <%= link_to "Check out this booking", prep_path(booking.prep) %>
+    </li>
+  <% end %>
+</ul>
 <%= link_to "Edit", edit_user_registration_path %>
