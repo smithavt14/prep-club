@@ -15,10 +15,12 @@
   <% end %>
 </ul>
 <%= link_to "Home", preps_path %>
-<%= link_to "Edit", edit_prep_path(@prep) %>
-<%= link_to "Delete", prep_path(@prep),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
 <%= link_to "Book", prep_bookings_path(@prep),
       method: :post,
       data: { confirm: "Book this meal prep?" } %>
+<% if @prep.user == current_user %>
+  <%= link_to "Edit", edit_prep_path(@prep) %>
+  <%= link_to "Delete", prep_path(@prep),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
