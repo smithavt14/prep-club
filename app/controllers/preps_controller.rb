@@ -6,11 +6,14 @@ class PrepsController < ApplicationController
     @preps = policy_scope(Prep)
     @preps = Prep.where.not(latitude: nil, longitude: nil)
 
-    @markers = @preps.map do |flat|
+    @markers = @preps.map do |prep|
       {
-        lat: flat.latitude,
-        lng: flat.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        lat: prep.latitude,
+        lng: prep.longitude,
+        name: prep.name,
+        location: prep.location,
+        meal: prep.meal,
+        id: prep.id
       }
     end
   end

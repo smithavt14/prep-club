@@ -1,2 +1,2 @@
 import "bootstrap";
-import "mapbox";
+import mapboxgl from 'mapbox-gl'
