@@ -3,6 +3,8 @@ class Prep < ApplicationRecord
   has_many :bookings
   has_many :reviews
 
+  acts_as_taggable_on :tags
+
   mount_uploader :photo, PhotoUploader
 
   validates :name, presence: true
@@ -25,5 +27,13 @@ class Prep < ApplicationRecord
 
   def check_event_time?
     self.time < Time.now
+  end
+
+  def most_used_tags
+    most_used_tags = []
+    ActsAsTaggableOn::Tag.most_used(3).each do |tag|
+      most_used_tags << tag.name
+    end
+    most_used_tags
   end
 end

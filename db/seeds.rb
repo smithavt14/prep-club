@@ -12,8 +12,11 @@
 Prep.destroy_all
 puts "Deleted all prior preps"
 
-max_participants = (1..20).to_a
+User.destroy_all
+puts "Deleted all prior users"
 
+max_participants = (1..20).to_a
+tags = ["healthy", "vegan", "vegetarian", "meat", "protein", "high-calorie"]
 
 10.times do
   @prep = Prep.new(
@@ -32,6 +35,7 @@ max_participants = (1..20).to_a
     gender: Faker::Gender.binary_type,
     location: Faker::Address.city,
   )
+  @prep.tag_list.add(tags.sample(3))
   @prep.save
 end
 

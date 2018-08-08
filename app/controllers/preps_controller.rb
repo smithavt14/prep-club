@@ -6,9 +6,15 @@ class PrepsController < ApplicationController
   end
 
   def show
+    @related_preps = @prep.find_related_tags
   end
 
   def new
+    @most_used_tags = []
+    ActsAsTaggableOn::Tag.most_used(5).each do |tag|
+      @most_used_tags << tag.name
+    end
+    @most_used_tags
     @prep = Prep.new
     authorize @prep
   end
@@ -17,6 +23,8 @@ class PrepsController < ApplicationController
     @prep = Prep.new(prep_params)
     @prep.user = current_user
     authorize @prep
+    ActsAsTaggableOn.force_lowercase = true
+    ActsAsTaggableOn.delimiter = ','
     @prep.save
     redirect_to prep_path(@prep)
   end
@@ -36,6 +44,15 @@ class PrepsController < ApplicationController
     redirect_to preps_path
   end
 
+  def tagged
+    if params[:tag].present?
+      @preps = Prep.tagged_with(params[:tag])
+    else
+      @preps = Prep.all
+    end
+    authorize @preps
+  end
+
   private
 
   def set_prep
@@ -44,6 +61,6 @@ class PrepsController < ApplicationController
   end
 
   def prep_params
-    params.require(:prep).permit(:name, :description, :max_participants, :meal, :time, :location, :photo)
+    params.require(:prep).permit(:name, :description, :max_participants, :meal, :time, :location, :photo, :tag_list)
   end
 end
