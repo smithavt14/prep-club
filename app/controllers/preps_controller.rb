@@ -1,8 +1,18 @@
 class PrepsController < ApplicationController
   before_action :set_prep, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @preps = policy_scope(Prep)
+    @preps = Prep.where.not(latitude: nil, longitude: nil)
+
+    @markers = @preps.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
