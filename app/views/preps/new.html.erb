@@ -3,6 +3,7 @@
 <%= simple_form_for (@prep) do |f| %>
   <%= f.input :name, placeholder: "Henry McLover" %>
   <%= f.input :description, placeholder: "Talk a bit about your event..."%>
+  <%= f.input :tag_list, hint: "People are using these tags most: (#{@most_used_tags.join(", ")})" %>
   <%= f.input :max_participants, placeholder: "1 - 20" %>
   <%= f.input :time %>
   <%= f.input :location, placeholder: "158 Julu Road, Shanghai" %>
