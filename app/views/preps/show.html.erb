@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col col-md-6">
         <div class="show-card">
-          <div class="show-card-left-photo" style="background-image: url('https://greatist.com/sites/default/files/Chicken%20Meal%20Prep.jpg')">
+          <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'logo.png') %>')">
           </div>
           <div class="show-card-body-left">
             <div class="show-card-tags"><%= @prep.tag_list %></div>
