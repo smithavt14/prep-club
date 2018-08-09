@@ -4,13 +4,15 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 70px);
+  background-size: cover;
+  background-position: left 50% bottom 85%;
 }
 
 .landing_banner-container {
   text-align: center;
 }
 
-.landing_review {
+.landing_wrapper-review {
   height: 30vh;
   background-color: #2A2632;
   display: flex;
@@ -19,7 +21,16 @@
   vertical-align: middle;
 }
 
-.landing_review_container {
+.landing_wrapper-review_container {
   position: relative;
   color: white;
+}
+
+.landing_wrapper-about {
+  background-color: #F6F3F0;
+}
+
+.landing_info-banner {
+    height: 70vh;
+    background-size: cover;
 }
