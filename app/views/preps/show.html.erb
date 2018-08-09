@@ -5,14 +5,56 @@
         <div class="show-card">
           <div class="show-card-left-photo" style="background-image: url('https://greatist.com/sites/default/files/Chicken%20Meal%20Prep.jpg')">
           </div>
-
           <div class="show-card-body-left">
-            <div class="show-card-tags">vegan | easy | low cost</div>
+            <div class="show-card-tags"><%= @prep.tag_list %></div>
             <div class="show-card-meal-title">
-              <p><strong>Tofu and Soba noodle meal prep</strong></p>
+              <p><strong><%= @prep.name %></strong></p>
             </div>
             <div class="show-card-meal-description">
-              <p>I’ve been craving some soba noodles lately! Any fellow Vegans want to join me to make this week’s lunch? I’ve got all the cooking utensils but please BYO container.</p>
+              <p><%= @prep.description %></p>
+              <p>INGREDIENTS:
+                <ul>
+                  <li>
+                    1 pound soba
+                  </li>
+                  <li>
+                    1/4 cup rice vinegar
+                  </li>
+                  <li>
+                    2 tablespoons soy sauce
+                  </li>
+                  <li>
+                    1 tablespoon sesame oil
+                  </li>
+                  <li>
+                    2 teaspoons brown sugar
+                  </li>
+                  <li>
+                    1 teaspoon sesame seeds
+                  </li>
+                  <li>
+                    1 tablespoon vegetable oil
+                  </li>
+                  <li>
+                    1 (14-ounce) package firm tofu, cubed
+                  </li>
+                  <li>
+                    2 cups shredded cabbage
+                  </li>
+                  <li>
+                    1 clove garlic, pressed
+                  </li>
+                </ul>
+                1 teaspoon freshly grated ginger
+                2 green onions, thinly sliced
+                Crushed peanuts, for serving
+                Sriracha, for serving
+                DIRECTIONS:
+                In a large pot of boiling water, cook noodles according to package instructions. Rinse under cold water and drain; set aside.
+                In a small bowl, whisk together rice vinegar, soy sauce, sesame oil, brown sugar and sesame seeds; set aside.
+                Heat vegetable oil in a large skillet over medium high heat. Add tofu and cook until golden brown, about 3-4 minutes; set aside. Add cabbage, garlic and ginger to the skillet and cook, stirring frequently, until tender, about 1-2 minutes.
+                In a large bowl, combine noodles, rice wine vinegar mixture, tofu, cabbage and green onions.
+                Serve immediately, garnished with peanuts and Sriracha, if desired.</p>
             </div>
             <div class="show-card-meal-location-count">
               <p>Jing'an | 5 preppers</p>
@@ -20,13 +62,12 @@
           </div>
         </div>
       </div>
-      <div class="col col-md-6" style="height: 100%;">
+      <div class="col col-md-6" style="position: sticky !important;
+  top: 0 !important;">
         <div class="show-card">
-
           <div class="show-card-join">
             <%= link_to "Join this meal prep", preps_path, class:"btn_fat" %>
           </div>
-
           <div class="show-card-avatar-md" style="background-image: url('https://78.media.tumblr.com/avatar_364ef84d1002_128.pnj');"></div>
           <div class="show-card-body-right">
             <div class="show-card-title">
@@ -41,7 +82,6 @@
   </div>
 </div>
 <div class="show-wrapper"></div>
-
 <h2><%= @prep.name %></h2>
 <%= cl_image_tag @prep.photo, height: 300, width: 400, crop: :fill %>
 <p><%= @prep.meal %></p>
