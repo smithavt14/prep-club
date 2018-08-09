@@ -6,7 +6,11 @@
           <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'placeholdermeal2.jpg') %>')">
           </div>
           <div class="show-card-body-left">
-            <div class="show-card-tags"><%= @prep.tag_list %></div>
+            <div class="show-card-tags">
+              <% @prep.tag_list.each do |tag| %>
+                <%= tag %>
+              <% end %>
+            </div>
             <div class="show-card-meal-title">
               <p><strong><%= @prep.name %></strong></p>
             </div>
@@ -22,16 +26,16 @@
       <div class="col col-md-6" style="position: sticky !important;
   top: 0 !important;">
         <div class="show-card">
+          <ul class="list-inline show-card-booked-avatars">
+            <% @prep.bookings.each do |booking| %>
+              <li style="list-style-type: none;">
+                <%= link_to user_path(booking.user) do %>
+                  <div class="show-card-avatar-sm" style="background-image: url('<%= booking.user.photo? ? (cl_image_path booking.user.photo) : (image_url 'logo.png') %>');"></div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
           <div class="show-card-join">
-            <ul class="list-inline">
-              <% @prep.bookings.each do |booking| %>
-                <li style="list-style-type: none;">
-                  <%= link_to user_path(booking.user) do %>
-                    <div class="show-card-avatar-sm" style="background-image: url('<%= booking.user.photo? ? (cl_image_path booking.user.photo) : (image_url 'logo.png') %>');"></div>
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
             <%= link_to "Join this meal prep", prep_bookings_path(@prep), method: :post, data: { confirm: "Are you sure?" }, class:"btn_fat" %>
           </div>
           <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
