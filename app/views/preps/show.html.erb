@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col col-md-6">
         <div class="show-card">
-          <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'logo.png') %>')">
+          <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'bannerimage.jpg') %>')">
           </div>
           <div class="show-card-body-left">
             <div class="show-card-tags"><%= @prep.tag_list %></div>
@@ -68,7 +68,7 @@
           <div class="show-card-join">
             <%= link_to "Join this meal prep", preps_path, class:"btn_fat" %>
           </div>
-          <div class="show-card-avatar-md" style="background-image: url('https://78.media.tumblr.com/avatar_364ef84d1002_128.pnj');"></div>
+          <div class="show-card-avatar-md" style="background-image: url('<%= prep.user.photo? ? (cl_image_path prep.user.photo) : (image_url 'profileavatarplaceholder.png') %>');"></div>
           <div class="show-card-body-right">
             <div class="show-card-title">
               <p> <strong>Adam Sandler</strong> | head chef</p>
