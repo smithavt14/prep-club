@@ -1,5 +1,5 @@
 .show-wrapper {
-  height: 100vh;
+  margin-top: -50px;
   background-color: white;
 }
 
@@ -135,4 +135,13 @@
   top: 37%;
   z-index: 4;
   position: absolute;
+}
+
+.show-wrapper-bottom {
+  height: 30vh;
+  width: 100vw;
+  display: flex;
+  background-color: white;
+  margin-top: -50px;
+  justify-content: center;
 }

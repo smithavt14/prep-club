@@ -36,7 +36,7 @@
             <% end %>
           </ul>
           <div class="show-card-join">
-            <%= link_to "Join this meal prep", prep_bookings_path(@prep), method: :post, data: { confirm: "Are you sure?" }, class:"btn_fat" %>
+            <%= link_to "Join this meal prep", prep_bookings_path(@prep), method: :post, data: { confirm: "Book this meal prep?" }, class:"btn_fat" %>
           </div>
           <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
           <div class="show-card-body-right">
@@ -56,46 +56,15 @@
     </div>
   </div>
 </div>
-<div class="show-wrapper"></div>
-<h2><%= @prep.name %></h2>
-<%= cl_image_tag @prep.photo, height: 300, width: 400, crop: :fill %>
-<p><%= @prep.meal %></p>
-<p><%= @prep.description %></p>
-<p>Max # of Participants: <%= @prep.max_participants %></p>
-<p><%= @prep.time %></p>
-<p><%= @prep.location %></p>
-<p><% @prep.tag_list.each do |tag| %>
-    <%= link_to tag, tagged_path(tag: tag) %>
-  <% end %>
-</p>
-<p><strong>Bookings:</strong></p>
-<ul>
-  <% @prep.bookings.each do |booking| %>
-    <li><%= booking.user.name %>
-      <%= link_to "Check out their bio", user_path(booking.user) %>
-    </li>
-  <% end %>
-</ul>
-<p><strong>Reviews:</strong></p>
-<ul>
-  <% @prep.reviews.each do |review| %>
-    <li>
-      <p><%= review.user.name %></p>
-      <p><%= review.content %></p>
-      <p><%= review.rating %></p>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Home", preps_path %>
-<%= link_to "Book", prep_bookings_path(@prep),
-      method: :post,
-      data: { confirm: "Book this meal prep?" } %>
-<% if @prep.user == current_user %>
-  <%= link_to "Edit", edit_prep_path(@prep) %>
-  <%= link_to "Delete", prep_path(@prep),
+<div class="show-wrapper-bottom">
+  <%= link_to "Home", preps_path, class:"btn_square-red", style:"height: 30%; display: flex; align-items: center;"%>
+  <% if @prep.user == current_user %>
+    <%= link_to "Edit", edit_prep_path(@prep), class:"btn_fat" %>
+    <%= link_to "Delete", prep_path(@prep),
       method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<% end %>
-<% if @prep.check_booking_status?(current_user) && @prep.check_event_time? %>
-  <%= link_to "Review", new_prep_review_path(@prep) %>
-<% end %>
+      data: { confirm: "Are you sure?" } , class:"btn_square-faded" %>
+  <% end %>
+  <% if @prep.check_booking_status?(current_user) && @prep.check_event_time? %>
+    <%= link_to "Review", new_prep_review_path(@prep), class:"btn_fat" %>
+  <% end %>
+</div>
