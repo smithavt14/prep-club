@@ -1,11 +1,11 @@
-<%= @preps.each do |prep| %>
+<% @preps.each do |prep| %>
   <div class="col col-xs-12 col-sm-6 col-lg-4">
     <div class="card_prep-body">
       <div class="card_prep-photo" style="background-image: url('<%= prep.photo? ? (cl_image_path prep.photo) : (image_url 'mealprepplaceholder.jpg') %>')">
-        <div class="card_avatar-sm" style="background-image: url('<%= prep.user.photo? ? (cl_image_path prep.user.photo) : (image_url 'profileavatarplaceholder.png') %>'); background-size: cover"></div>
+        <div class="card_avatar-sm" style="background-image: url('<%= prep.user.photo? ? (cl_image_path prep.user.photo) : (image_url 'profileavatarplaceholder.png') %>'); background-size: cover; background-position: center;"></div>
       </div>
       <div class="card_tags">
-        tag1 | tag2 | tag3
+        <%= prep.tag_list %>
       </div>
       <div class="card_prep-name">
         <h1><strong><%= prep.name %></strong></h1>
