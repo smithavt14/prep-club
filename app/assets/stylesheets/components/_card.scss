@@ -10,6 +10,9 @@
   z-index: 1;
   margin-top: 60px;
 }
+.card_prep-body a:hover {
+    text-decoration:none
+  }
 
 .card_prep-photo {
   margin-top: -30px;
@@ -24,7 +27,11 @@
 
 .card_container {
   padding: 50px;
+  margin-top: 0px;
   background-color: white;
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .card_avatar-sm {
@@ -61,6 +68,7 @@
 
 .card_prep-name h1 {
   font-size: 16px;
+  color: #2A2632;
 }
 
 .card_prep-description {
@@ -69,7 +77,18 @@
   margin-top: 66px;
   margin-left: 30px;
   margin-right: 30px;
+  color: #2A2632;
+  text-decoration: none;
 }
+
+.card_prep-description a:hover {
+  text-decoration: none;
+}
+
+.card_prep-description:hover {
+    color: #2A2632;
+    text-decoration: none;
+  }
 
 .card_prep-location-participants {
   text-align: center;
