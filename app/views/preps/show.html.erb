@@ -1,5 +1,29 @@
-<h1>Preps#show</h1>
-<p>Find me in app/views/preps/show.html.erb</p>
+<div class="show-wrapper">
+  <div class="show-container">
+    <div class="row">
+      <div class="col col-md-6">
+        <div class="show-card">
+          <div class="show-card-left-photo" style="background-image: url('https://greatist.com/sites/default/files/Chicken%20Meal%20Prep.jpg')">
+          </div>
+          <div class="show-card-body-left"></div>
+        </div>
+      </div>
+      <div class="col col-md-6" style="height: 100%;">
+        <div class="show-card">
+          <div class="show-card-avatar-md" style="background-image: url('https://78.media.tumblr.com/avatar_364ef84d1002_128.pnj');"></div>
+          <div class="show-card-body-right">
+            <div class="show-card-title">
+              <p> <strong>Adam Sandler</strong> | head chef</p>
+            </div>
+          </div>
+          <div class="show-card-right-map" style="background-image: url('https://geographic.media/wp-content/uploads/Melbourne-Google-Street-Map.jpg')">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="show-wrapper"></div>
 <h2><%= @prep.name %></h2>
 <%= cl_image_tag @prep.photo, height: 300, width: 400, crop: :fill %>
 <p><%= @prep.meal %></p>
