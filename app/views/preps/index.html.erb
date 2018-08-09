@@ -3,33 +3,7 @@
   <div class="card_container">
     <div class="row">
       <%= render 'partials/prep-card' %>
-      <%= render 'partials/prep-card' %>
-      <%= render 'partials/prep-card' %>
-      <%= render 'partials/prep-card' %>
-      <%= render 'partials/prep-card' %>
-      <%= render 'partials/prep-card' %>
     </div>
   </div>
-  <br>
-  <br>
 </div>
-<h1>hello</h1>
-<p>Find me in app/views/preps/index.html.erb</p>
-<% @preps.each do |prep| %>
-  <ul>
-    <li>
-      <%= link_to prep_path(prep) do %>
-        <h3><%= prep.name %> </h3>
-      <% end %>
-      <p><%= prep.meal %></p>
-      <p><%= prep.time %></p>
-      <p><%= prep.location %></p>
-      <p><% prep.tag_list.each do |tag| %>
-          <%= link_to tag, tagged_path(tag: tag) %>
-        <% end %>
-      </p>
-    </li>
-  </ul>
-<% end %>
 <%= link_to "Make a New Meal Prep Event", new_prep_path %>
-
