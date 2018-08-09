@@ -5,11 +5,28 @@
         <div class="show-card">
           <div class="show-card-left-photo" style="background-image: url('https://greatist.com/sites/default/files/Chicken%20Meal%20Prep.jpg')">
           </div>
-          <div class="show-card-body-left"></div>
+
+          <div class="show-card-body-left">
+            <div class="show-card-tags">vegan | easy | low cost</div>
+            <div class="show-card-meal-title">
+              <p><strong>Tofu and Soba noodle meal prep</strong></p>
+            </div>
+            <div class="show-card-meal-description">
+              <p>I’ve been craving some soba noodles lately! Any fellow Vegans want to join me to make this week’s lunch? I’ve got all the cooking utensils but please BYO container.</p>
+            </div>
+            <div class="show-card-meal-location-count">
+              <p>Jing'an | 5 preppers</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col col-md-6" style="height: 100%;">
         <div class="show-card">
+
+          <div class="show-card-join">
+            <%= link_to "Join this meal prep", preps_path, class:"btn_fat" %>
+          </div>
+
           <div class="show-card-avatar-md" style="background-image: url('https://78.media.tumblr.com/avatar_364ef84d1002_128.pnj');"></div>
           <div class="show-card-body-right">
             <div class="show-card-title">
@@ -24,6 +41,7 @@
   </div>
 </div>
 <div class="show-wrapper"></div>
+
 <h2><%= @prep.name %></h2>
 <%= cl_image_tag @prep.photo, height: 300, width: 400, crop: :fill %>
 <p><%= @prep.meal %></p>
