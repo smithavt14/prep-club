@@ -50,6 +50,10 @@
 <p>Max # of Participants: <%= @prep.max_participants %></p>
 <p><%= @prep.time %></p>
 <p><%= @prep.location %></p>
+<p><% @prep.tag_list.each do |tag| %>
+    <%= link_to tag, tagged_path(tag: tag) %>
+  <% end %>
+</p>
 <p><strong>Bookings:</strong></p>
 <ul>
   <% @prep.bookings.each do |booking| %>

@@ -1,0 +1,9 @@
+<h1><%= params[:tag] %></h1>
+<ul>
+  <% @preps.each do |prep| %>
+    <li>
+      <%= link_to prep.name, prep_path(prep) %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Back to Events Page", preps_path  %>

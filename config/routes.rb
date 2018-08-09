@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'pages#home'
+  get '/tagged', to: "preps#tagged", as: :tagged
 
   resources :users, only: [:show]
   resources :preps do
