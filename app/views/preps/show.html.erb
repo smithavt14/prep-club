@@ -3,34 +3,50 @@
     <div class="row">
       <div class="col col-md-6">
         <div class="show-card">
-          <div class="show-card-left-photo" style="background-image: url('https://greatist.com/sites/default/files/Chicken%20Meal%20Prep.jpg')">
+          <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'placeholdermeal2.jpg') %>')">
           </div>
-
           <div class="show-card-body-left">
-            <div class="show-card-tags">vegan | easy | low cost</div>
+            <div class="show-card-tags">
+              <% @prep.tag_list.each do |tag| %>
+                <%= tag %>
+              <% end %>
+            </div>
             <div class="show-card-meal-title">
-              <p><strong>Tofu and Soba noodle meal prep</strong></p>
+              <p><strong><%= @prep.name %></strong></p>
             </div>
             <div class="show-card-meal-description">
-              <p>I’ve been craving some soba noodles lately! Any fellow Vegans want to join me to make this week’s lunch? I’ve got all the cooking utensils but please BYO container.</p>
-            </div>
-            <div class="show-card-meal-location-count">
-              <p>Jing'an | 5 preppers</p>
+              <p><%= @prep.description %></p>
+              <p><%= @prep.description %></p>
+              <p><%= @prep.description %></p>
+              <p><%= @prep.description %></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col col-md-6" style="height: 100%;">
+      <div class="col col-md-6" style="position: sticky !important;
+  top: 0 !important;">
         <div class="show-card">
-
+          <ul class="list-inline show-card-booked-avatars">
+            <% @prep.bookings.each do |booking| %>
+              <li style="list-style-type: none;">
+                <%= link_to user_path(booking.user) do %>
+                  <div class="show-card-avatar-sm" style="background-image: url('<%= booking.user.photo? ? (cl_image_path booking.user.photo) : (image_url 'logo.png') %>');"></div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
           <div class="show-card-join">
-            <%= link_to "Join this meal prep", preps_path, class:"btn_fat" %>
+            <%= link_to "Join this meal prep", prep_bookings_path(@prep), method: :post, data: { confirm: "Are you sure?" }, class:"btn_fat" %>
           </div>
-
-          <div class="show-card-avatar-md" style="background-image: url('https://78.media.tumblr.com/avatar_364ef84d1002_128.pnj');"></div>
+          <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
           <div class="show-card-body-right">
             <div class="show-card-title">
-              <p> <strong>Adam Sandler</strong> | head chef</p>
+              <p> <strong><%= @prep.user.name %></strong> | head chef</p>
+            </div>
+            <div class="show-card-meal-location-count" style="margin: 25px;">
+              <p><strong>Location</strong> | <%= @prep.location %> </p>
+              <p><strong>Max preppers</strong> | <%= @prep.max_participants %></p>
+              <p><strong>Time</strong> | <%= @prep.nicetime %></p>
             </div>
           </div>
           <div class="show-card-right-map" style="background-image: url('https://geographic.media/wp-content/uploads/Melbourne-Google-Street-Map.jpg')">
@@ -41,7 +57,6 @@
   </div>
 </div>
 <div class="show-wrapper"></div>
-
 <h2><%= @prep.name %></h2>
 <%= cl_image_tag @prep.photo, height: 300, width: 400, crop: :fill %>
 <p><%= @prep.meal %></p>

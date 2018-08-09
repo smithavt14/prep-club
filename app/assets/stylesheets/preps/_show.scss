@@ -26,7 +26,7 @@
 
 .show-card-body-left {
   width: 100%;
-  height: 383px;
+  min-height: 383px;
   background-color: #F6F3F0;
   border-radius: 15px;
   z-index: 1;
@@ -53,7 +53,8 @@
     }
     .show-card-meal-location-count {
     font-size: 10;
-    text-align: center;
+    margin: 30px;
+    text-align: left;
     margin-top: 85px;
     }
 }
@@ -73,18 +74,19 @@
 
 .show-card-body-right{
   width: 100%;
+  position: sticky !important;
   height: 535px;
   background-color: white;
   border-radius: 0px;
   z-index: 1;
   border: 7px solid #F6F3F0;
   p {
-    text-align: center;
     font-size: 8;
     margin-top: 15px;
   }
   .show-card-title{
     margin-top: 55px;
+    text-align: center;
   }
 }
 
@@ -100,9 +102,31 @@
   border: 4px solid white;
 }
 
+.show-card-avatar-sm {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  z-index: 3;
+  background-size: cover;
+  background-position: center;
+  // top: 171px;
+  // position: absolute;
+  border: 4px solid white;
+  margin-left: -30px;
+}
+
 
 .show-card-join{
   z-index: 4;
   position: absolute;
   top: 380px;
+}
+
+.list-inline {
+  margin: 0;
+}
+.show-card-booked-avatars {
+  top: 37%;
+  z-index: 4;
+  position: absolute;
 }

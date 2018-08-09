@@ -36,4 +36,8 @@ class Prep < ApplicationRecord
     end
     most_used_tags
   end
+
+  def nicetime
+    self.time.strftime("%l:%M %p, %b %e")
+  end
 end
