@@ -38,6 +38,6 @@ class Prep < ApplicationRecord
   end
 
   def nicetime
-    self.time.strftime("%b %e, %l:%M %p")
+    self.time.strftime("%l:%M %p, %b %e")
   end
 end
