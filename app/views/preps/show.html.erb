@@ -6,9 +6,9 @@
           <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'placeholdermeal2.jpg') %>')">
           </div>
           <div class="show-card-body-left">
-            <div class="show-card-tags">
+            <div class="show-card-tags" style="text-decoration: none;">
               <% @prep.tag_list.each do |tag| %>
-                <%= tag %>
+                <%= link_to tag, tagged_path(tag: tag) %>
               <% end %>
             </div>
             <div class="show-card-meal-title">
