@@ -15,6 +15,10 @@ marker = [new BMap.Marker(point2), new BMap.Marker(point)]
 // var marker1 = new BMap.Marker(point); // Create annotation
 map.addOverlay(new BMap.Marker(point2));
 
+
+// Can't add anrray to the map.addOverlay function
+
+
 // Add marker to overlay...
 
 // const mapElement = document.getElementById('map');
