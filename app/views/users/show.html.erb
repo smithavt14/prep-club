@@ -1,19 +1,37 @@
-<h1><%= @user.name %></h1>
-<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
-<p><%= @user.email %></p>
-<p>Bio: <%= @user.bio %></p>
-<p>Location: <%= @user.location %></p>
-<p>Gender: <%= @user.gender %></p>
-<p><strong>My Bookings:</strong></p>
-<ul>
-  <% @user.bookings.each do |booking| %>
-    <li>
-      <p><%= booking.prep.name %></p>
-      <%= link_to "Check out this booking", prep_path(booking.prep) %>
-    </li>
-  <% end %>
-</ul>
-<% if @user == current_user %>
-  <%= link_to "Edit", edit_user_registration_path %>
-<% end %>
-<%= link_to "Home", preps_path %>
+<div class="user-show-wrapper">
+  <div class="user-show-wrapper-user-container">
+    <div class="user-show-wrapper-user-container-avatar" style="background: url('<%= @user.photo? ? (cl_image_path @user.photo, width: 200, height: 200, crop: :thumb, gravity: :face) : (image_url 'logo.png') %>');">
+    </div>
+    <div class="user-show-wrapper-user-container-name">
+      <h3>Hey, I'm <%= @user.name %>.</h3>
+    </div>
+    <div class="user-show-wrapper-user-container-location">
+      <%= @user.location %>
+    </div>
+    <div class="user-show-wrapper-user-container-bio">
+      <%= @user.bio %>
+    </div>
+    <div class="user-show-wrapper-user-container-links">
+      <%= link_to "Edit", edit_user_registration_path, {:class => "btn btn-primary" }%>
+    </div>
+  </div>
+  <div class="user-show-wrapper-meal-container">
+    <div class="user-show-wrapper-meal-container-title">
+      <h3>My meal preps</h3>
+    </div>
+    <div class="user-show-wrapper-meal-container-card-container">
+      <% @user.preps.each do |prep| %>
+        <%= link_to prep_path(prep) do %>
+          <div class="user-show-wrapper-meal-container-card" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 99.99%, rgba(255, 255, 255, 0) 100%), url('<%= cl_image_path prep.photo %>')">
+            <div class="user-show-wrapper-meal-container-card-name">
+              <h4><%= prep.name %></h4>
+            </div>
+            <div class="user-show-wrapper-meal-container-card-taglist">
+              <p><%= prep.tag_list.join(", ") %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
