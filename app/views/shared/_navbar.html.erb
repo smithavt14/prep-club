@@ -1,19 +1,24 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <%= link_to root_path do %>
+    <div class="navbar-wagon-brand">
+      <%= image_tag "bowl.svg", height: 50 %>
+      <p><strong>prep</strong>Club</p>
+    </div>
   <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <div class="navbar-wagon-right-links">
+        <%= link_to "Discover", preps_path %>
+        <%= link_to "Host", new_prep_path %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </div>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= cl_image_tag current_user.photo, class: "avatar-sm dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to user_path(current_user) do %>
@@ -35,7 +40,9 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <div class="wagon-navbar-login-link">
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path %>
+      </div>
     <% end %>
   </div>
   <!-- Dropdown list appearing on mobile only -->
