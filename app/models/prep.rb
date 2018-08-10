@@ -40,4 +40,12 @@ class Prep < ApplicationRecord
   def nicetime
     self.time.strftime("%l:%M %p, %b %e")
   end
+
+  def check_user_booking_status?(current_user)
+    bookings_users = []
+    self.bookings.each do |booking|
+      bookings_users << booking.user
+    end
+    bookings_users.include?(current_user)
+  end
 end

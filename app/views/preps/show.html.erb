@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col col-md-6">
         <div class="show-card">
-          <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'placeholdermeal2.jpg') %>')">
+          <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'placeholdermeal2.jpg') %>'); background-size: cover">
           </div>
           <div class="show-card-body-left">
             <div class="show-card-tags" style="text-decoration: none;">
@@ -21,9 +21,6 @@
               <p><%= @prep.description %></p>
             </div>
             <div class="show-button-container">
-              <% if @prep.user == current_user %>
-                <%= link_to "Edit", edit_prep_path(@prep), class:"btn_fat edit-button" %>
-              <% end %>
             </div>
           </div>
         </div>
@@ -35,16 +32,37 @@
             <% @prep.bookings.each do |booking| %>
               <li style="list-style-type: none;">
                 <%= link_to user_path(booking.user) do %>
-                  <div class="show-card-avatar-sm" style="background-image: url('<%= booking.user.photo? ? (cl_image_path booking.user.photo) : (image_url 'logo.png') %>');"></div>
+                  <div class="show-card-avatar-sm" style="background: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>'); background-size: cover;"></div>
                 <% end %>
               </li>
             <% end %>
           </ul>
           <div class="show-card-join">
-            <%= link_to "Join this meal prep", prep_bookings_path(@prep), method: :post, data: { confirm: "Book this meal prep?" }, class:"btn_fat" %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 52c219296e773ec70d8331f9319a8185739c0b22
+            <% if @user_booking_status %>
+              <%= link_to "Cancel booking", prep_booking_path(@booking),
+              method: :delete,
+              data: { confirm: "Cancel this booking?" },
+              class:"btn_fat" %>
+            <% elsif @prep.user == current_user %>
+              <%= link_to "Edit this meal prep", edit_prep_path(@prep),
+              class:"btn_fat" %>
+            <% else %>
+              <%= link_to "Join this meal prep", prep_bookings_path(@prep),
+              method: :post,
+              data: { confirm: "Are you sure?" },
+              class:"btn_fat" %>
+            <% end %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 52c219296e773ec70d8331f9319a8185739c0b22
           </div>
           <%= link_to user_path(@prep.user) do %>
-            <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
+            <div class="show-card-avatar-md" style="background: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>'); background-size: cover;"></div>
           <% end %>
           <div class="show-card-body-right">
             <div class="show-card-title">
