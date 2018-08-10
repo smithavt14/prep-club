@@ -6,9 +6,9 @@
           <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'placeholdermeal2.jpg') %>')">
           </div>
           <div class="show-card-body-left">
-            <div class="show-card-tags">
+            <div class="show-card-tags" style="text-decoration: none;">
               <% @prep.tag_list.each do |tag| %>
-                <%= tag %>
+                <%= link_to tag, tagged_path(tag: tag) %>
               <% end %>
             </div>
             <div class="show-card-meal-title">
@@ -19,6 +19,11 @@
               <p><%= @prep.description %></p>
               <p><%= @prep.description %></p>
               <p><%= @prep.description %></p>
+            </div>
+            <div class="show-button-container">
+              <% if @prep.user == current_user %>
+                <%= link_to "Edit", edit_prep_path(@prep), class:"btn_fat edit-button" %>
+              <% end %>
             </div>
           </div>
         </div>
@@ -48,7 +53,9 @@
               class:"btn_fat" %>
             <% end %>
           </div>
-          <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
+          <%= link_to user_path(@prep.user) do %>
+            <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
+          <% end %>
           <div class="show-card-body-right">
             <div class="show-card-title">
               <p> <strong><%= @prep.user.name %></strong> | head chef</p>
@@ -57,6 +64,7 @@
               <p><strong>Location</strong> | <%= @prep.location %> </p>
               <p><strong>Max preppers</strong> | <%= @prep.max_participants %></p>
               <p><strong>Time</strong> | <%= @prep.nicetime %></p>
+              <p><strong>Who's going</strong></p>
             </div>
           </div>
           <div class="show-card-right-map" style="background-image: url('https://geographic.media/wp-content/uploads/Melbourne-Google-Street-Map.jpg')">
