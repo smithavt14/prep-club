@@ -36,7 +36,17 @@
             <% end %>
           </ul>
           <div class="show-card-join">
-            <%= link_to "Join this meal prep", prep_bookings_path(@prep), method: :post, data: { confirm: "Are you sure?" }, class:"btn_fat" %>
+            <% if @user_booking_status %>
+              <%= link_to "Cancel booking", prep_booking_path(@booking),
+              method: :delete,
+              data: { confirm: "Cancel this booking?" },
+              class:"btn_fat" %>
+            <% else %>
+              <%= link_to "Join this meal prep", prep_bookings_path(@prep),
+              method: :post,
+              data: { confirm: "Are you sure?" },
+              class:"btn_fat" %>
+            <% end %>
           </div>
           <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
           <div class="show-card-body-right">
@@ -87,9 +97,15 @@
   <% end %>
 </ul>
 <%= link_to "Home", preps_path %>
-<%= link_to "Book", prep_bookings_path(@prep),
+<% if @user_booking_status == true %>
+  <%= link_to "Cancel booking", prep_bookings_path(@prep),
+      method: :delete,
+      data: { confirm: "Canclel this booking?" } %>
+<% else %>
+  <%= link_to "Book", prep_bookings_path(@prep),
       method: :post,
       data: { confirm: "Book this meal prep?" } %>
+<% end %>
 <% if @prep.user == current_user %>
   <%= link_to "Edit", edit_prep_path(@prep) %>
   <%= link_to "Delete", prep_path(@prep),

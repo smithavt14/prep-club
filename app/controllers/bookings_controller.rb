@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show]
 
   def index
     @bookings = policy_scope(Booking)
@@ -24,8 +24,11 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @prep = Prep.find(params[:id])
+    @booking = @prep.bookings.find { |booking| booking.user == current_user }
+    authorize @booking
     @booking.destroy
-    redirect_to user_path(current_user)
+    redirect_to prep_path(@prep)
   end
 
   private
