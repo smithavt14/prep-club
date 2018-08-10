@@ -55,3 +55,49 @@
     margin-bottom: 20px;
   }
 }
+
+.form-container {
+  width: 70%;
+}
+.form-new-prep {
+  background: #F6F3F0;
+  // border: 10px solid white;
+  padding: 10px 20px;
+  margin-top: 30px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px;
+   }
+}
+
+.form-new-wrapper {
+  background-image: url('https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  min-height: 95vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-around;
+  padding: 4vh;
+  border-radius: 15px;
+  margin: 2.5vw;
+}
+
+.form-new-prep-title {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  font-size: 60px;
+  font-weight: 450;
+}
+
+.form-new-prep-button {
+  display: flex;
+  justify-content: space-around;
+}
