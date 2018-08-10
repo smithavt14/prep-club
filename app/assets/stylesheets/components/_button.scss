@@ -1,24 +1,20 @@
 .btn_fat {
-  padding: 17px 30px;
+  padding: 17px 12px;
   background-color: #F1574B;
   color: white;
   border-radius: 50px;
   border: solid #F1574B;
-  height: 40%;
-  display: flex;
-  align-items: center;
-}
-
-.btn_fat a {
+  width: 51%;
+  a {
   text-decoration: none;
   margin-top: 50px;
-}
-
-.btn_fat:hover {
+  }
+  &:hover {
   color: #F1574B;
   text-decoration: none;
   background-color: white;
   border: solid #F1574B;
+  }
 }
 
 .btn_skinny {
