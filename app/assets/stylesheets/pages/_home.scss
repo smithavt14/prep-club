@@ -15,6 +15,24 @@
   margin-bottom: 12%;
 }
 
+.banner-btn-red {
+  padding: 17px 35px;
+  background-color: #F1574B;
+  color: white;
+  border-radius: 50px;
+  border: solid #F1574B;
+  a {
+  text-decoration: none;
+  margin-top: 50px;
+  }
+  &:hover {
+  color: #F1574B;
+  text-decoration: none;
+  background-color: white;
+  border: solid #F1574B;
+  }
+}
+
 .landing_wrapper-review {
   height: 30vh;
   background-color: #2A2632;
