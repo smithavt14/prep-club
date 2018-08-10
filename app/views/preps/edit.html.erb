@@ -10,7 +10,9 @@
         <%= f.input :location, placeholder: "158 Julu Road, Shanghai" %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit "Update your Event", class: "btn btn-primary" %>
+        <div class="form-new-prep-button">
+          <%= f.submit "Upadate your event", class: "btn_skinny text-align" %>
+        </div>
       <% end %>
       <br>
       <%= link_to "Back to Index", preps_path %>
