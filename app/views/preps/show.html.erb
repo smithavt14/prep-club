@@ -32,7 +32,7 @@
             <% @prep.bookings.each do |booking| %>
               <li style="list-style-type: none;">
                 <%= link_to user_path(booking.user) do %>
-                  <div class="show-card-avatar-sm" style="background: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>'); background-size: cover;"></div>
+                  <div class="show-card-avatar-sm" style="background: url('<%= booking.user.photo? ? (cl_image_path booking.user.photo) : (image_url 'logo.png') %>'); background-size: cover;"></div>
                 <% end %>
               </li>
             <% end %>
