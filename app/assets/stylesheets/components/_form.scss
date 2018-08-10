@@ -1,81 +1,103 @@
-
-@import url(https://fonts.googleapis.com/css?family=Merriweather);
-
-*,
-*:before,
-*:after {
-   box-sizing: border-box;
-}
-
-form {
-   max-width: 700px;
-   text-align: center;
-   margin: 20px auto;
-
-  input, textarea {
-    border: 0;
-    outline: 0;
-    padding: 10px;
-    border-radius: 8px;
-    display: block;
+.form-login {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 30px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
     width: 100%;
-    margin-top: 1em;
-    font-family: 'Merriweather', sans-serif;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    resize: none;
-    font-size: 12px;
-
-    &:focus {
-       box-shadow: 0 0px 2px red;
-    }
-  }
-
-  #input-submit {
-     color: white;
-     background: red;
-     cursor: pointer;
-
-    &:hover {
-       box-shadow: 0 1px 1px 1px rgba(#aaa, 0.6);
-    }
-  }
-
-  textarea {
-    height: 135px;
-
+    margin-bottom: 20px;
   }
 }
 
-
-.half {
-  float: left;
-  width: 48%;
-  margin-bottom: 1em;
+.form-title {
+  text-align: center;
 }
 
-.right { width: 50%; }
-
-.left {
-     margin-right: 2%;
-}
-
-
-@media (max-width: 480px) {
-  .half {
-     width: 100%;
-     float: none;
-     margin-bottom: 0;
+.form-signup {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 30px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
-
-/* Clearfix */
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+.form-change-password {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 30px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
-.cf:after {
-    clear: both;
+.form-container {
+  width: 70%;
+}
+.form-new-prep {
+  background: #F6F3F0;
+  // border: 10px solid white;
+  padding: 10px 20px;
+  margin-top: 30px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px;
+   }
+}
+
+.form-new-wrapper {
+  background-image: url('https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  min-height: 95vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-around;
+  padding: 4vh;
+  border-radius: 15px;
+  margin: 2.5vw;
+}
+
+.form-new-prep-title {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  font-size: 60px;
+  font-weight: 450;
+}
+
+.form-new-prep-button {
+  display: flex;
+  justify-content: space-around;
 }
