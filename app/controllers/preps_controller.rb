@@ -7,6 +7,8 @@ class PrepsController < ApplicationController
 
   def show
     @related_preps = @prep.find_related_tags
+    @user_booking_status = @prep.check_user_booking_status?(current_user)
+    @booking = @prep.bookings.where { |booking| booking.user == current_user }
   end
 
   def new
