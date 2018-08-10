@@ -12,6 +12,7 @@
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 12%;
 }
 
 .landing_wrapper-review {
@@ -35,4 +36,24 @@
 .landing_info-banner {
     height: 70vh;
     background-size: cover;
+}
+
+.landing_card-about {
+  text-align: center;
+  padding-top: 15%;
+}
+
+.landing_card-about-icon {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.landing_card-about-title {
+  font-size: 30px;
+
+}
+
+.landing_card-about-body {
+  font-size: 20px;
+
 }
