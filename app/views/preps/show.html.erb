@@ -20,6 +20,11 @@
               <p><%= @prep.description %></p>
               <p><%= @prep.description %></p>
             </div>
+            <div class="show-button-container">
+              <% if @prep.user == current_user %>
+                <%= link_to "Edit", edit_prep_path(@prep), class:"btn_fat edit-button" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -38,7 +43,9 @@
           <div class="show-card-join">
             <%= link_to "Join this meal prep", prep_bookings_path(@prep), method: :post, data: { confirm: "Book this meal prep?" }, class:"btn_fat" %>
           </div>
-          <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
+          <%= link_to user_path(@prep.user) do %>
+            <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
+          <% end %>
           <div class="show-card-body-right">
             <div class="show-card-title">
               <p> <strong><%= @prep.user.name %></strong> | head chef</p>
@@ -47,6 +54,7 @@
               <p><strong>Location</strong> | <%= @prep.location %> </p>
               <p><strong>Max preppers</strong> | <%= @prep.max_participants %></p>
               <p><strong>Time</strong> | <%= @prep.nicetime %></p>
+              <p><strong>Who's going</strong></p>
             </div>
           </div>
           <div class="show-card-right-map" style="background-image: url('https://geographic.media/wp-content/uploads/Melbourne-Google-Street-Map.jpg')">
@@ -55,16 +63,4 @@
       </div>
     </div>
   </div>
-</div>
-<div class="show-wrapper-bottom">
-  <%= link_to "Home", preps_path, class:"btn_square-red", style:"height: 30%; display: flex; align-items: center;"%>
-  <% if @prep.user == current_user %>
-    <%= link_to "Edit", edit_prep_path(@prep), class:"btn_fat" %>
-    <%= link_to "Delete", prep_path(@prep),
-      method: :delete,
-      data: { confirm: "Are you sure?" } , class:"btn_square-faded" %>
-  <% end %>
-  <% if @prep.check_booking_status?(current_user) && @prep.check_event_time? %>
-    <%= link_to "Review", new_prep_review_path(@prep), class:"btn_fat" %>
-  <% end %>
 </div>

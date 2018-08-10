@@ -145,3 +145,21 @@
   margin-top: -50px;
   justify-content: center;
 }
+
+.show-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  a {
+    color: white;
+  }
+}
+
+.edit-button {
+  padding: 6px;
+  border-radius: 9px;
+  text-align: center;
+  position: absolute;
+  height: 36px;
+  bottom: 5px;
+}
