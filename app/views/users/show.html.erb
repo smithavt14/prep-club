@@ -12,7 +12,9 @@
       <%= @user.bio %>
     </div>
     <div class="user-show-wrapper-user-container-links">
-      <%= link_to "Edit", edit_user_registration_path, class:"btn_skinny" %>
+      <% if @user == current_user %>
+        <%= link_to "Edit", edit_user_registration_path, class:"btn_skinny" %>
+      <% end %>
     </div>
   </div>
   <div class="user-show-wrapper-meal-container">
