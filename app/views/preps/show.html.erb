@@ -38,10 +38,6 @@
             <% end %>
           </ul>
           <div class="show-card-join">
-<<<<<<< HEAD
-=======
-
->>>>>>> 52c219296e773ec70d8331f9319a8185739c0b22
             <% if @user_booking_status %>
               <%= link_to "Cancel booking", prep_booking_path(@booking),
               method: :delete,
@@ -56,10 +52,6 @@
               data: { confirm: "Are you sure?" },
               class:"btn_fat" %>
             <% end %>
-<<<<<<< HEAD
-=======
-
->>>>>>> 52c219296e773ec70d8331f9319a8185739c0b22
           </div>
           <%= link_to user_path(@prep.user) do %>
             <div class="show-card-avatar-md" style="background: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>'); background-size: cover;"></div>
