@@ -4,13 +4,13 @@
   </div>
 </div>
 <div class="card_wrapper">
+  <div class="map_wrapper">
+    <div id="map" data-markers="<%= @markers.to_json %>">
+    </div>
+  </div>
   <div class="card_container">
     <div class="row">
       <%= render 'partials/prep-card' %>
     </div>
-  </div>
-</div>
-<div class="index-map-wrapper">
-  <div class="index-map-container" style="background-image: url('https://meteorcapture.com/content/images/2015/03/Screen-Shot-2015-03-26-at-6-06-45-pm-1.png')">
   </div>
 </div>

@@ -64,7 +64,9 @@
           </div>
           <div class="show-card-body-right">
           </div>
-          <div class="show-card-right-map" style="background-image: url('https://geographic.media/wp-content/uploads/Melbourne-Google-Street-Map.jpg')">
+          <div class="show-card-right-map">
+            <div id="map" data-markers="<%= @marker.to_json %>">
+            </div>
           </div>
         </div>
       </div>
