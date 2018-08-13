@@ -59,12 +59,14 @@
     text-align: center;
     margin: 0px 40px;
     }
-    .show-card-meal-location-count {
-    font-size: 10;
-    margin: 30px;
-    text-align: left;
-    margin-top: 85px;
-    }
+}
+.show-card-meal-location-count {
+  font-size: 10;
+  margin: 30px;
+  position: absolute;
+  z-index: 3;
+  top: 13%;
+  left: 8%;
 }
 
 .show-card-right-map {
@@ -92,11 +94,12 @@
     font-size: 8;
     margin-top: 15px;
   }
-  .show-card-title{
-    margin-top: 55px;
-    text-align: center;
-  }
 }
+.show-card-title {
+  position: absolute;
+  z-index: 3;
+  top: 11%;
+  }
 
 .show-card-avatar-md {
   height: 100.5px;
@@ -126,7 +129,7 @@
 .show-card-join{
   z-index: 4;
   position: absolute;
-  top: 400px;
+  top: 52%;
 }
 
 .list-inline {
