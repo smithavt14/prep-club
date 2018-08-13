@@ -23,6 +23,9 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'geocoder'
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -34,5 +37,4 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
 end

@@ -3,12 +3,25 @@ class PrepsController < ApplicationController
 
   def index
     @preps = policy_scope(Prep)
+    @preps = Prep.where.not(latitude: nil, longitude: nil)
+    @markers = @preps.map do |prep|
+      {
+        lat: prep.latitude,
+        lng: prep.longitude,
+        infoWindow: { content: render_to_string(partial: "/preps/map_box", locals: { prep: prep })
+                      }
+      }
+    end
   end
 
   def show
     @related_preps = @prep.find_related_tags
     @user_booking_status = @prep.check_user_booking_status?(current_user)
     @booking = @prep.bookings.where { |booking| booking.user == current_user }
+    @marker = [{
+                 lat: @prep.latitude,
+                 lng: @prep.longitude
+    }]
   end
 
   def new

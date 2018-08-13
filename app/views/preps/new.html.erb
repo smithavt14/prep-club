@@ -8,7 +8,7 @@
         <%= f.input :tag_list, hint: "People are using these tags most: (#{@most_used_tags.join(", ")})" %>
         <%= f.input :max_participants, placeholder: "1 - 20" %>
         <%= f.input :time, minute_step: 15, wrapper_html: { class: "form-inline form-inputs" } %>
-        <%= f.input :location, placeholder: "158 Julu Road, Shanghai" %>
+        <%= f.input :location, placeholder: "158 Julu Road, Shanghai", id: "prep-location" %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <div class="form-new-prep-button">

@@ -24,20 +24,32 @@
   text-shadow: 1px 1px 13px rgba(0,0,0,0.2);
 }
 
-.index-map-wrapper {
-  height: 45vh;
+.card_wrapper {
   background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 30px;
+  text-align: center;
 }
 
-.index-map-container {
-  background-size: cover;
-  background-position: center;
-  width: 93%;
+#map {
+  height: 100%;
+  width: 100%;
   border-radius: 15px;
-  height: 85%;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
+
+.map_wrapper {
+  height: 50vh;
+  width: 100vw;
+  padding: 60px;
+
+}
+
+.map-wrapper {
+  height: 60vh;
+  width: 100vw;
+  text-align: center;
+  padding: 45px;
+}
+
+.button-group {
+  z-index: 50;
+}
+
