@@ -10,6 +10,10 @@
   margin: 2.5vw;
 }
 
+.user-show-container {
+  width: 100%;
+}
+
 .user-show-wrapper-user-container, .user-show-wrapper-meal-container {
   height: 85%;
   width: 40vw;
@@ -17,46 +21,66 @@
 }
 
 .user-show-wrapper-user-container {
-  background-color: #F6F3F0;
-  margin: 10vw 5vw 0 0;
-  text-align: center;
-  padding: 2%;
-  border: 10px solid white;
+    background-color: #F6F3F0;
+    margin: 3vw 0 0 0;
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+    border: 10px solid white;
+    display: flex;
+    min-height: 351px;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 .user-show-wrapper-user-container-avatar {
-  height: 10em;
-  width: 10em;
-  border-radius: 50%;
-  margin-top: -23%;
-  margin-left: 31%;
-  border: 5px solid white;
+    background-size: cover;
+    background-position: center;
+    height: 7em;
+    width: 7em;
+    border-radius: 50%;
+    border: 5px solid white;
+    position: absolute;
+    top: -19px;
+    right: 50%;
+    -webkit-transform: translate(50%, 0);
+    transform: translate(50%, 0);
 }
 
 .user-show-wrapper-user-container-name {
-  margin-top: 10%;
-  font-size: 3vw;
-  font-weight: bold;
+    top: 119px;
+    position: absolute;
+    font-size: 3vw;
+    font-weight: bold;
 }
 
 .user-show-wrapper-user-container-location {
-  font-size: 1.5vw;
-  color: #F1574B;
+    font-size: 14px;
+    top: 114px;
+    position: absolute;
+    color: #F1574B;
 }
 
 .user-show-wrapper-user-container-bio {
-  font-size: 1.5vw;
-  margin-top: 5%;
+    font-size: 14px;
+    margin-top: 5%;
+    position: absolute;
+    top: 126px;
+    padding: 40px;
 }
 
 .user-show-wrapper-user-container-links {
-  margin-top: 5%;
+    position: absolute;
+    bottom: 55px;
 }
 
 .user-show-wrapper-meal-container {
   background-color: white;
   text-align: center;
   padding: 2%;
+  width: 100%;
   border: 10px solid #F6F3F0;
     a {
     text-decoration: none;
