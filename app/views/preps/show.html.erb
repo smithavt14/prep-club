@@ -43,19 +43,27 @@
           <div class="show-card-join">
             <%= link_to "Join this meal prep", prep_bookings_path(@prep), method: :post, data: { confirm: "Book this meal prep?" }, class:"btn_fat" %>
           </div>
+<<<<<<< Updated upstream
           <%= link_to user_path(@prep.user) do %>
             <div class="show-card-avatar-md" style="background-image: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>');"></div>
           <% end %>
+=======
+          <div class="avatar-link-div">
+            <%= link_to user_path(@prep.user) do %>
+              <div class="show-card-avatar-md" style="background: url('<%= @prep.user.photo? ? (cl_image_path @prep.user.photo) : (image_url 'logo.png') %>'); background-size: cover;"></div>
+            <% end %>
+          </div>
+          <div class="show-card-title">
+            <p> <strong><%= @prep.user.name %></strong> | head chef</p>
+          </div>
+          <div class="show-card-meal-location-count" style="margin: 25px;">
+            <p><strong>Location</strong> | <%= @prep.location %> </p>
+            <p><strong>Max preppers</strong> | <%= @prep.max_participants %></p>
+            <p><strong>Time</strong> | <%= @prep.nicetime %></p>
+            <p><strong>Who's going</strong></p>
+          </div>
+>>>>>>> Stashed changes
           <div class="show-card-body-right">
-            <div class="show-card-title">
-              <p> <strong><%= @prep.user.name %></strong> | head chef</p>
-            </div>
-            <div class="show-card-meal-location-count" style="margin: 25px;">
-              <p><strong>Location</strong> | <%= @prep.location %> </p>
-              <p><strong>Max preppers</strong> | <%= @prep.max_participants %></p>
-              <p><strong>Time</strong> | <%= @prep.nicetime %></p>
-              <p><strong>Who's going</strong></p>
-            </div>
           </div>
           <div class="show-card-right-map" style="background-image: url('https://geographic.media/wp-content/uploads/Melbourne-Google-Street-Map.jpg')">
           </div>
