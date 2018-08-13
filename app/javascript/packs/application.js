@@ -2,8 +2,12 @@ import "bootstrap";
 
 import { autocomplete } from '../components/autocomplete';
 
+import { recipesearch } from '../components/recipesearch';
+
 // [...]
 autocomplete();
+
+recipesearch();
 
 import GMaps from 'gmaps/gmaps.js';
 

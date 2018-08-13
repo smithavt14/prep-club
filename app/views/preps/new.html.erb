@@ -2,13 +2,14 @@
   <h2 class="form-new-prep-title ">Create your own prep club</h2>
   <div class="container form-container">
     <div class="form-new-prep">
-      <%= simple_form_for (@prep) do |f| %>
+      <%= simple_form_for (@prep), id:"reg-form" do |f| %>
         <%= f.input :name, placeholder: "Henry McLover" %>
+        <%= f.input :meal, placeholder: "Search for a meal here" %>
         <%= f.input :description, placeholder: "Talk a bit about your event..."%>
         <%= f.input :tag_list, hint: "People are using these tags most: (#{@most_used_tags.join(", ")})" %>
-        <%= f.input :max_participants, placeholder: "1 - 20" %>
-        <%= f.input :time, minute_step: 15, wrapper_html: { class: "form-inline form-inputs" } %>
         <%= f.input :location, placeholder: "158 Julu Road, Shanghai", id: "prep-location" %>
+        <%= f.input :time, minute_step: 15, wrapper_html: { class: "form-inline form-inputs", } %>
+        <%= f.input :max_participants, placeholder: "1 - 20" %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <div class="form-new-prep-button">
