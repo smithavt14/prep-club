@@ -109,9 +109,10 @@
   background-size: cover;
   background-position: center;
   top: -24px;
-  right: 40%;
+  left: 50%;
   position: absolute;
   border: 4px solid white;
+  transform: translate(-50%,0);
 }
 
 .show-card-avatar-sm {
