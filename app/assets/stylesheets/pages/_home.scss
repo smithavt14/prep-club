@@ -54,13 +54,14 @@
 .landing_info-banner {
     height: 70vh;
     background-size: cover;
-    background-position: left 50% bottom 38%;
+    background-position: left 50% bottom 50%;
     opacity: 0.8;
 }
 
 .landing_card-about {
   text-align: center;
   padding-top: 15%;
+  height: 380px;
 }
 
 .landing_card-about-icon {
@@ -76,9 +77,21 @@
   font-size: 20px;
 }
 
+.landing_info-banner-inner {
+  margin: auto;
+  max-width: 1200px;
+  overflow: hidden;
+}
 .landing_info-banner-title {
   color: white;
   font-weight: bolder;
   font-size: 80px;
   text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.2);
+}
+.landing_info-banner-body {
+    color: white;
+    width: 35%;
+    font-weight: light;
+    font-size: 20px;
+    text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.4);
 }
