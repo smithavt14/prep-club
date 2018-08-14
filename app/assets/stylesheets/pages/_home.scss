@@ -61,6 +61,7 @@
 .landing_card-about {
   text-align: center;
   padding-top: 15%;
+  border-radius: 5px;
   height: 380px;
 }
 
@@ -82,16 +83,25 @@
   max-width: 1200px;
   overflow: hidden;
 }
-.landing_info-banner-title {
-  color: white;
-  font-weight: bolder;
-  font-size: 80px;
-  text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.2);
-}
-.landing_info-banner-body {
+
+.why-prep-card {
+  width: 41%;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #F1574B;
+  height: 40%;
+  text-align: center;
+  padding: 14px;
+  position: relative;
+  .why-prep-body {
+    text-align: center;
+    justify-content: center;
     color: white;
-    width: 35%;
+    width: 80%;
     font-weight: light;
-    font-size: 20px;
-    text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.4);
+    font-size: 16px;
+    h1 {
+      font-weight: bolder;
+    }
+  }
 }
