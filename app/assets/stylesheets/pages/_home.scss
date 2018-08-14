@@ -54,6 +54,8 @@
 .landing_info-banner {
     height: 70vh;
     background-size: cover;
+    background-position: left 50% bottom 38%;
+    opacity: 0.8;
 }
 
 .landing_card-about {
@@ -68,10 +70,15 @@
 
 .landing_card-about-title {
   font-size: 30px;
-
 }
 
 .landing_card-about-body {
   font-size: 20px;
+}
 
+.landing_info-banner-title {
+  color: white;
+  font-weight: bolder;
+  font-size: 80px;
+  text-shadow: 1px 1px 13px rgba(0, 0, 0, 0.2);
 }
