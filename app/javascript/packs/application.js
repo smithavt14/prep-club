@@ -1,11 +1,20 @@
 import "bootstrap";
 
-import { autocomplete } from '../components/autocomplete';
-
-// [...]
-autocomplete();
+import swal from 'sweetalert';
 
 import GMaps from 'gmaps/gmaps.js';
+
+import { autocomplete } from '../components/autocomplete';
+
+autocomplete();
+
+import { recipesearch } from '../components/recipesearch';
+
+recipesearch();
+
+import { popupsearch } from '../components/popupsearch';
+
+popupsearch();
 
 const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in

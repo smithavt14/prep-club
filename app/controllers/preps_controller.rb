@@ -76,6 +76,6 @@ class PrepsController < ApplicationController
   end
 
   def prep_params
-    params.require(:prep).permit(:name, :description, :max_participants, :meal, :time, :location, :photo, :tag_list)
+    params.require(:prep).permit(:name, :description, :max_participants, :recipe_name, :recipe_url, :time, :location, :photo, :tag_list)
   end
 end

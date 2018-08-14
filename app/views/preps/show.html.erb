@@ -27,15 +27,15 @@
         <div class="show-card">
           <div class="show-card-join">
             <% if @user_booking_status %>
-              <%= link_to "Cancel booking", prep_booking_path(@booking),
+              <%= link_to "Cancel", prep_booking_path(@booking),
               method: :delete,
               data: { confirm: "Cancel this booking?" },
               class:"btn_fat" %>
             <% elsif @prep.user == current_user %>
-              <%= link_to "Edit this meal prep", edit_prep_path(@prep),
+              <%= link_to "Edit", edit_prep_path(@prep),
               class:"btn_fat" %>
             <% else %>
-              <%= link_to "Join this meal prep", prep_bookings_path(@prep),
+              <%= link_to "Join", prep_bookings_path(@prep),
               method: :post,
               data: { confirm: "Are you sure?" },
               class:"btn_fat" %>
