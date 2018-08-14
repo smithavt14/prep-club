@@ -8,6 +8,8 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "plugins/flatpickr.min";
+
 
 // Your CSS partials
 @import "layouts/index";
@@ -15,4 +17,3 @@
 @import "pages/index";
 @import "preps/index";
 @import "users/show";
-

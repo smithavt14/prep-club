@@ -1,5 +1,7 @@
 import "bootstrap";
 
+import "../plugins/flatpickr"
+
 import swal from 'sweetalert';
 
 import GMaps from 'gmaps/gmaps.js';
