@@ -5,6 +5,9 @@
       <%= simple_form_for (@prep) do |f| %>
         <%= f.input :name, placeholder: "Henry McLover" %>
         <%= f.input :description, placeholder: "Talk a bit about your event..."%>
+        <%= f.input :recipe_name %>
+        <%= f.input :recipe_url %>
+        <%= f.input :recipe_ingredients %>
         <%= f.input :max_participants, placeholder: "1 - 20" %>
         <%= f.input :time, minute_step: 15, wrapper_html: { class: "form-inline form-inputs" } %>
         <%= f.input :location, placeholder: "158 Julu Road, Shanghai" %>

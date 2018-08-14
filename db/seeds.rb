@@ -27,7 +27,7 @@ people_photos = ['https://images.pexels.com/photos/220453/pexels-photo-220453.jp
     name: Faker::SiliconValley.company,
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam iusto commodi amet eos recusandae ea animi dicta quas explicabo aperiam, impedit praesentium maxime eum optio numquam delectus, cumque molestiae? Nobis!",
     max_participants: max_participants.sample,
-    meal: Faker::Food.dish,
+    recipe_name: Faker::Food.dish,
     time: Faker::Time.forward(23, :night),
     location: Faker::Address.full_address,
     photo: prep_photos.sample
