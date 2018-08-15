@@ -22,6 +22,7 @@ function sweetAlertSearch() {
     const name = result.recipe.label;
     const imageURL = result.recipe.image;
     const url = result.recipe.url;
+    const tags = result.recipe.healthLabels.join(", ")
     swal({
       title: "Top result:",
       text: `Name: ${name}`,
@@ -41,10 +42,12 @@ function sweetAlertSearch() {
     .then((value) => {
         switch (value) {
         case "confirm":
-          const recipeName = document.getElementById('prep_recipe_name');
-          const recipeURL = document.getElementById('prep_recipe_url');
+          const recipeName = document.getElementById('prep_recipe_name')
+          const recipeURL = document.getElementById('prep_recipe_url')
+          const recipeTags = document.getElementById('prep_tag_list')
           recipeName.value = name
           recipeURL.value = url
+          recipeTags.value = tags
           swal({
             icon: "success",
             text: "Added!"
