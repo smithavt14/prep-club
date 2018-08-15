@@ -147,10 +147,11 @@
 }
 
 .landing_card-about-bottom-content-cards-inner {
-  width: 80%;
-  height: 80%;
-  background-color: white;
-  border-radius: 5px;
+    width: 80%;
+    height: 150px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
 }
 
 .landing_card-about-bottom-content-cards-inner-photo {
@@ -167,4 +168,26 @@
   width: 100%;
   top: 25px;
   text-align: center;
+}
+
+.landing_card-people-body {
+  padding: 16px 100px;
+  font-weight: lighter;
+  margin-top: 23%;
+  h4 {
+    font-weight: lighter;
+  }
+  p {
+    font-size: 20px
+
+  }
+}
+
+.landing_card-about-bottom-content-cards-inner-comment {
+    position: absolute;
+    width: 60%;
+    top: 8%;
+    right: 5%;
+    font-size: 15px;
+    font-style: italic;
 }
