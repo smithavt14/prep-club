@@ -147,11 +147,11 @@
 }
 
 .landing_card-about-bottom-content-cards-inner {
-    width: 80%;
-    height: 150px;
-    background-color: white;
-    border-radius: 5px;
-    position: relative;
+  width: 600px;
+  height: 150px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
 }
 
 .landing_card-about-bottom-content-cards-inner-photo {
@@ -184,10 +184,11 @@
 }
 
 .landing_card-about-bottom-content-cards-inner-comment {
-    position: absolute;
     width: 60%;
     top: 8%;
     right: 5%;
     font-size: 15px;
     font-style: italic;
+    padding: 10px 0px 0px;
+    margin-left: 23px;
 }
