@@ -14,7 +14,7 @@
         <%= f.input :recipe_name %>
         <%= f.input :recipe_url %>
         <%= f.input :recipe_ingredients, as: :hidden %>
-        <%= f.input :tag_list, hint: "People are using these tags most: (#{@most_used_tags.join(", ")})" %>
+        <%= f.input :tag_list %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <div class="form-new-prep-button">
