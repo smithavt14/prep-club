@@ -22,10 +22,14 @@ prep_photos = ['https://images.pexels.com/photos/76093/pexels-photo-76093.jpeg?a
 
 people_photos = ['https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/712521/pexels-photo-712521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350', 'https://images.pexels.com/photos/213117/pexels-photo-213117.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940']
 
+prep_descriptions = ["Join us on Saturday for an afternoon of cooking! We'll be cooking my mother's famous recipe. If you're a vegan, you're more than welcome!", "If you're into good friends, good times, and good eats, this is the event for you! Come to our club meeting this Wednesday for some fun in the sun.", "Wine, meat, and cheese. What else could a girl want? Come on over for some afternoon fun.", "I've been a body builder for the last four years, throughout this time I've always wanted to find friends to do meal prepping together. Finally this platform has given me the opportunity! Looking forward to meeting you all later on.", "This is a strictly vegan event. If you even bring just one slice of cheese, you will be extracated from the premises. Yes, extracated is a word. Look it up."]
+
+
+
 10.times do
   @prep = Prep.new(
     name: Faker::SiliconValley.company,
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam iusto commodi amet eos recusandae ea animi dicta quas explicabo aperiam, impedit praesentium maxime eum optio numquam delectus, cumque molestiae? Nobis!",
+    description: prep_descriptions.sample,
     max_participants: max_participants.sample,
     recipe_name: Faker::Food.dish,
     time: Faker::Time.forward(23, :night),
@@ -36,7 +40,7 @@ people_photos = ['https://images.pexels.com/photos/220453/pexels-photo-220453.jp
     email: Faker::Internet.email,
     password: "123123", #min 6 characters
     name: Faker::Name.name,
-    bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam iusto commodi amet eos recusandae ea animi dicta quas explicabo aperiam, impedit praesentium maxime eum optio numquam delectus, cumque molestiae? Nobis!",
+    bio: Faker::GreekPhilosophers.quote,
     gender: Faker::Gender.binary_type,
     location: Faker::Address.city,
   )
