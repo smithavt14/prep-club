@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col col-md-6 col-xs-12">
         <div class="user-show-wrapper-user-container">
-          <div class="user-show-wrapper-user-container-avatar" style="background: url('<%= @user.photo? ? (cl_image_path @user.photo, width: 200, height: 200, crop: :thumb, gravity: :face) : (image_url 'logo.png') %>');">
+          <div class="user-show-wrapper-user-container-avatar" style="background: url('<%= @user.photo? ? (cl_image_path @user.photo) : (image_url 'logo.png') %>'); background-size: cover;">
           </div>
           <div class="user-show-wrapper-user-container-name">
             <h3>Hey, I'm <%= @user.name %>.</h3>
