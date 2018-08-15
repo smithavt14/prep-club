@@ -30,15 +30,15 @@
               <%= link_to "Cancel", prep_booking_path(@booking),
               method: :delete,
               data: { confirm: "Cancel this booking?" },
-              class:"btn_fat" %>
+              class:"btn_fat btn_padding" %>
             <% elsif @prep.user == current_user %>
               <%= link_to "Edit", edit_prep_path(@prep),
-              class:"btn_fat" %>
+              class:"btn_fat btn_padding" %>
             <% else %>
               <%= link_to "Join", prep_bookings_path(@prep),
               method: :post,
               data: { confirm: "Are you sure?" },
-              class:"btn_fat" %>
+              class:"btn_fat btn_padding" %>
             <% end %>
           </div>
           <ul class="list-inline show-card-booked-avatars">
