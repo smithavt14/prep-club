@@ -76,6 +76,9 @@
     width: 100%;
     margin-bottom: 20px;
    }
+   a {
+    color: #F1574B;
+   }
 }
 
 .form-new-wrapper {
@@ -100,4 +103,15 @@
 .form-new-prep-button {
   display: flex;
   justify-content: space-around;
+  margin-top: 25px;
 }
+
+#search-recipe {
+  color: #F1574B;
+}
+
+.prep_recipe_name {
+  margin: 10px 0;
+}
+
+
