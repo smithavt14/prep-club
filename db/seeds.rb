@@ -46,6 +46,7 @@ people_photos = ['https://images.pexels.com/photos/220453/pexels-photo-220453.jp
   @prep.remote_photo_url = prep_photos.sample
   @prep.tag_list.add(tags.sample(3))
   @prep.save
+  puts "created seed..."
 end
 
 puts "Created 10 instances of Meal Prep Events"

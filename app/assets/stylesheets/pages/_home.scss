@@ -3,9 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 70px);
+  height: calc(65vh - 70px);
   background-size: cover;
-  background-position: left 50% bottom 85%;
+  background-position: left 50% bottom 65%;
 }
 
 .landing_banner-container {
@@ -34,7 +34,7 @@
 }
 
 .landing_wrapper-review {
-  height: 30vh;
+  height: 25vh;
   background-color: #2A2632;
   display: flex;
   align-items: center;
@@ -55,7 +55,6 @@
     height: 70vh;
     background-size: cover;
     background-position: left 50% bottom 50%;
-    opacity: 0.8;
 }
 
 .landing_card-about {
@@ -104,4 +103,8 @@
       font-weight: bolder;
     }
   }
+}
+
+.landing_example-wrapper {
+    height: 70vh;
 }
