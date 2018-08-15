@@ -14,6 +14,9 @@
           <div class="user-show-wrapper-user-container-bio">
             <%= @user.bio %>
           </div>
+          <div class="user-show-wrapper-user-container-time">
+            <p><strong>prep</strong>Clubber since: <%= @user.nicetime %></p>
+          </div>
           <div class="user-show-wrapper-user-container-links">
             <% if @user == current_user %>
               <%= link_to "Edit", edit_user_registration_path, class:"btn_skinny" %>
@@ -23,21 +26,25 @@
       </div>
       <div class="col col-md-6 col-xs-12">
         <div class="user-show-wrapper-meal-container">
-          <div class="user-show-wrapper-meal-container-title">
-            <h3>My meal preps</h3>
-          </div>
-          <div class="user-show-wrapper-meal-container-card-container">
-            <% @user.preps.each do |prep| %>
-              <%= link_to prep_path(prep) do %>
-                <div class="user-show-wrapper-meal-container-card" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 99.99%, rgba(255, 255, 255, 0) 100%), url('<%= cl_image_path prep.photo %>')">
-                  <div class="user-show-wrapper-meal-container-card-name">
-                    <h4><%= prep.name %></h4>
+          <% if @user.preps %>
+            <div class="user-show-wrapper-meal-container-title">
+              <h3>My meal preps</h3>
+            </div>
+            <div class="user-show-wrapper-meal-container-card-container">
+              <% @user.preps.each do |prep| %>
+                <%= link_to prep_path(prep) do %>
+                  <div class="user-show-wrapper-meal-container-card" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 99.99%, rgba(255, 255, 255, 0) 100%), url('<%= cl_image_path prep.photo %>')">
+                    <div class="user-show-wrapper-meal-container-card-name">
+                      <h4><%= prep.name %></h4>
+                    </div>
+                    <div class="user-show-wrapper-meal-container-card-taglist">
+                      <p><%= prep.tag_list.join(", ") %></p>
+                    </div>
                   </div>
-                  <div class="user-show-wrapper-meal-container-card-taglist">
-                    <p><%= prep.tag_list.join(", ") %></p>
-                  </div>
-                </div>
+                <% end %>
               <% end %>
+            <% else %>
+              <p>This user has not yet created any prep events. Connect with them to get started!</p>
             <% end %>
           </div>
         </div>

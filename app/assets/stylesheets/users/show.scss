@@ -50,25 +50,23 @@
 }
 
 .user-show-wrapper-user-container-name {
-    top: 119px;
-    position: absolute;
-    font-size: 3vw;
-    font-weight: bold;
+  margin-top: 50px;
+  font-size: 3vw;
+  font-weight: bold;
 }
 
 .user-show-wrapper-user-container-location {
-    font-size: 14px;
-    top: 114px;
-    position: absolute;
-    color: #F1574B;
+  font-size: 20px;
+  color: #F1574B;
 }
 
 .user-show-wrapper-user-container-bio {
-    font-size: 14px;
-    margin-top: 5%;
-    position: absolute;
-    top: 126px;
-    padding: 40px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.user-show-wrapper-user-container-time {
+  margin-top: 15px;
 }
 
 .user-show-wrapper-user-container-links {
