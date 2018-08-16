@@ -8,5 +8,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
+  def nicetime
+    self.created_at.strftime("%B %Y")
+  end
 
 end

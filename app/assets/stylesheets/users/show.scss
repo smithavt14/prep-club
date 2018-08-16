@@ -50,25 +50,23 @@
 }
 
 .user-show-wrapper-user-container-name {
-    top: 119px;
-    position: absolute;
-    font-size: 3vw;
-    font-weight: bold;
+  margin-top: 50px;
+  font-size: 3vw;
+  font-weight: bold;
 }
 
 .user-show-wrapper-user-container-location {
-    font-size: 14px;
-    top: 114px;
-    position: absolute;
-    color: #F1574B;
+  font-size: 20px;
+  color: #F1574B;
 }
 
 .user-show-wrapper-user-container-bio {
-    font-size: 14px;
-    margin-top: 5%;
-    position: absolute;
-    top: 126px;
-    padding: 40px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.user-show-wrapper-user-container-time {
+  margin-top: 15px;
 }
 
 .user-show-wrapper-user-container-links {
@@ -110,7 +108,12 @@
     font-size: 1.75vw;
     color: white;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-    margin: 7% 5% 0 0 !important;
+    margin: 0 !important;
+  }
+  p {
+    color: white;
+    margin: 0 !important;
+    font-size: 16px;
   }
 }
 
