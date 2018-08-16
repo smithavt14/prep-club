@@ -28,10 +28,10 @@
       </div>
       <div class="col col-md-6 col-xs-12">
         <div class="user-show-wrapper-meal-container">
-          <% if @user.preps %>
-            <div class="user-show-wrapper-meal-container-title">
-              <h3>Upcoming prepClub events</h3>
-            </div>
+          <div class="user-show-wrapper-meal-container-title">
+            <h3>Upcoming prepClub events</h3>
+          </div>
+          <% if @user.preps.nil? %>
             <div class="user-show-wrapper-meal-container-card-container">
               <% @user.preps.each do |prep| %>
                 <%= link_to prep_path(prep) do %>
@@ -45,7 +45,9 @@
                 <% end %>
               <% end %>
             <% else %>
-              <p>This user has not yet created any prep events. Connect with them to get started!</p>
+              <div class="user-show-wrapper-meal-container-card-no-prep">
+                <p>This user has not yet created any prep events. Connect with them to get started!</p>
+              </div>
             <% end %>
           </div>
         </div>
