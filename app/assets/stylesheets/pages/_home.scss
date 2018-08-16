@@ -9,6 +9,13 @@
   background-position: left 50% bottom 65%;
 }
 
+@media (max-width: 530px) {
+  .landing_banner {
+    color: white;
+    text-shadow: 1px 1px 9px rgba(0,0,0,0.4);
+  }
+}
+
 .landing_banner-container {
   text-align: center;
   flex-direction: column;
@@ -44,8 +51,11 @@
 }
 
 .landing_wrapper-review_container {
-  position: relative;
-  color: white;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-content: columns;
+    align-items: center;
 }
 
 .landing_wrapper-about {
@@ -155,3 +165,7 @@
 }
 
 
+.review-text {
+  width: 100%;
+  margin-bottom: 10px;
+}
