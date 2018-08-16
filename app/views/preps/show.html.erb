@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col col-md-6" style="margin: 30px 0;">
         <div class="show-card">
-          <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo? ? (cl_image_path @prep.photo) : (image_url 'placeholdermeal2.jpg') %>'); background-size: cover">
+          <div class="show-card-left-photo" style="background-image: url('<%= @prep.photo.present? ? (cl_image_path @prep.photo) : (image_path @prep.image_link) %>'); background-size: cover">
           </div>
           <div class="show-card-body-left">
-            <div class="show-card-tags" style="text-decoration: none;">
+            <div class="show-card-tags">
               <% @prep.tag_list.each do |tag| %>
-                <%= link_to tag, tagged_path(tag: tag) %>
+                <p><%= tag %></p>
               <% end %>
             </div>
             <div class="show-card-meal-title">
@@ -16,6 +16,14 @@
             </div>
             <div class="show-card-meal-description">
               <p><%= @prep.description %></p>
+              <% if @prep.recipe_ingredients %>
+                <div class="show-card-meal-ingredients">
+                  <div class="show-card-meal-ingredients-title">
+                    <p>Ingredients</p>
+                  </div>
+                  <p><%= raw @prep.recipe_ingredients %></p>
+                </div>
+              <% end %>
             </div>
             <div class="show-button-container">
             </div>

@@ -23,6 +23,7 @@ function sweetAlertSearch() {
     const imageURL = result.recipe.image;
     const url = result.recipe.url;
     const tags = result.recipe.healthLabels.join(", ")
+    const ingredients = result.recipe.ingredientLines.map(i => `<li>${i}</li>`).join("")
     swal({
       title: "Top result:",
       text: `Name: ${name}`,
@@ -45,13 +46,29 @@ function sweetAlertSearch() {
           const recipeName = document.getElementById('prep_recipe_name')
           const recipeURL = document.getElementById('prep_recipe_url')
           const recipeTags = document.getElementById('prep_tag_list')
+          const recipeIngredients = document.getElementById('prep_recipe_ingredients')
+          const imageLink = document.getElementById('prep_image_link')
+          const photoColumn = document.querySelector('.form_new_prep_column_1')
+          const photoPreview = document.querySelector('.form_new_prep_photo_preview')
+          const photoText = document.querySelector('.form_new_prep_photo')
+          const photoOr = document.querySelector('.form_new_prep_column_3')
           recipeName.value = name
           recipeURL.value = url
           recipeTags.value = tags
+          imageLink.value = imageURL
+          recipeIngredients.value = ingredients
+
+          photoPreview.style.backgroundImage = `url('${imageURL}')`
+          photoColumn.style.display = 'block'
+          photoOr.style.display = 'flex'
+
           swal({
             icon: "success",
             text: "Added!"
           });
+
+          photoPreview.onclick = function () {
+            redBorder() }
           break;
         case "Again":
           swal(sweetAlertSearch());

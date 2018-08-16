@@ -20,6 +20,33 @@
   text-align: center;
 }
 
+.form_new_prep_photo_preview {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  border-radius: 5px;
+  margin: 5px 20px 0 0;
+}
+
+.form_new_prep_photo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form_new_prep_column_1 {
+  display: none;
+}
+
+.form_new_prep_column_3 {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.form_new_prep_column_2 {
+}
+
 .form-signup {
   background: white;
   padding: 10px 20px;

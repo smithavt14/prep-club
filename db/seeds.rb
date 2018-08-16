@@ -24,8 +24,6 @@ people_photos = ['https://images.pexels.com/photos/220453/pexels-photo-220453.jp
 
 prep_descriptions = ["Join us on Saturday for an afternoon of cooking! We'll be cooking my mother's famous recipe. If you're a vegan, you're more than welcome!", "If you're into good friends, good times, and good eats, this is the event for you! Come to our club meeting this Wednesday for some fun in the sun.", "Wine, meat, and cheese. What else could a girl want? Come on over for some afternoon fun.", "I've been a body builder for the last four years, throughout this time I've always wanted to find friends to do meal prepping together. Finally this platform has given me the opportunity! Looking forward to meeting you all later on.", "This is a strictly vegan event. If you even bring just one slice of cheese, you will be extracated from the premises. Yes, extracated is a word. Look it up."]
 
-
-
 10.times do
   @prep = Prep.new(
     name: Faker::SiliconValley.company,

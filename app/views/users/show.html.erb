@@ -33,6 +33,9 @@
                 <p>You have no notifications. Sign up for an event or create one yourself!</p>
               </div>
             <% else %>
+              <% @user.preps.each do |prep| %>
+                <p><%= link_to prep.name, prep_path(prep) %> is happening on <%= prep.nicetimeMDY %></p>
+              <% end %>
               <% @user.bookings.each do |booking| %>
                 <p><%= link_to booking.prep.name, prep_path(booking.prep) %> is happening on <%= booking.prep.nicetimeMDY %></p>
               <% end %>
@@ -53,7 +56,7 @@
             <div class="user-show-wrapper-meal-container-card-container">
               <% @user.preps.each do |prep| %>
                 <%= link_to prep_path(prep) do %>
-                  <div class="user-show-wrapper-meal-container-card" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 99.99%, rgba(255, 255, 255, 0) 100%), url('<%= cl_image_path prep.photo %>')">
+                  <div class="user-show-wrapper-meal-container-card" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 99.99%, rgba(255, 255, 255, 0) 100%), url('<%= prep.photo.present? ? (cl_image_path prep.photo) : (image_path prep.image_link) %>')">
                     <div class="user-show-wrapper-meal-container-card-name">
                       <h4><%= prep.name %></h4>
                       <p><%= prep.nicetime %></p>

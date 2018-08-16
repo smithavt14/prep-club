@@ -22,6 +22,11 @@ class PrepsController < ApplicationController
                  lat: @prep.latitude,
                  lng: @prep.longitude
     }]
+    if @prep.photo
+      @photo = @prep.photo
+    else
+      @photo = @prep.photo_url
+    end
   end
 
   def new
@@ -76,6 +81,6 @@ class PrepsController < ApplicationController
   end
 
   def prep_params
-    params.require(:prep).permit(:name, :description, :max_participants, :recipe_name, :recipe_url, :time, :location, :photo, :tag_list)
+    params.require(:prep).permit(:name, :description, :max_participants, :recipe_name, :recipe_url, :recipe_ingredients,  :time, :location, :photo, :tag_list, :image_link)
   end
 end
