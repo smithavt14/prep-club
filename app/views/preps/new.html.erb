@@ -1,4 +1,5 @@
 <div class="form-new-wrapper">
+
   <h2 class="form-new-prep-title ">Create your own prep club</h2>
   <div class="container form-container">
     <div class="form-new-prep">
@@ -31,10 +32,12 @@
         </div>
         <div class="form-new-prep-button">
           <%= f.submit "Create event", class: "btn_skinny text-align" %>
+            </div>
+          <% end %>
+          <br>
+          <%= link_to "Back to Index", preps_path %>
         </div>
-      <% end %>
-      <br>
-      <%= link_to "Back to Index", preps_path %>
+      </div>
     </div>
   </div>
 </div>
