@@ -25,11 +25,25 @@
             <% end %>
           </div>
         </div>
+        <% if @user == current_user %>
+          <div class="user-show-wrapper-notifications-container">
+            <h4>Notifications</h4>
+            <% if @user.bookings.empty? && @user.preps.empty? %>
+              <div class="user-show-wrapper-meal-container-card-no-prep">
+                <p>You have no notifications. Sign up for an event or create one yourself!</p>
+              </div>
+            <% else %>
+              <% @user.bookings.each do |booking| %>
+                <p><%= link_to booking.prep.name, prep_path(booking.prep) %> is happening on <%= booking.prep.nicetimeMDY %></p>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
       <div class="col col-md-6 col-xs-12">
         <div class="user-show-wrapper-meal-container">
           <div class="user-show-wrapper-meal-container-title">
-            <h3>Upcoming prepClub events</h3>
+            <h3>Upcoming <strong>prep</strong>Club events</h3>
           </div>
           <% if @user.preps.empty? %>
             <div class="user-show-wrapper-meal-container-card-no-prep">

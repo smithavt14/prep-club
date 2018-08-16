@@ -40,6 +40,10 @@ class Prep < ApplicationRecord
     self.time.strftime("%l:%M %p, %b %e")
   end
 
+  def nicetimeMDY
+    self.time.strftime("%b %d, %Y")
+  end
+
   def check_user_booking_status?(current_user)
     bookings_users = []
     self.bookings.each do |booking|
