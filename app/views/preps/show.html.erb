@@ -7,7 +7,7 @@
           </div>
           <div class="show-card-body-left">
             <div class="show-card-tags">
-              <% @prep.tag_list.each do |tag| %>
+              <% @prep.tag_list[0..2].each do |tag| %>
                 <p><%= tag %></p>
               <% end %>
             </div>
