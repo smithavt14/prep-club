@@ -20,6 +20,8 @@
           <div class="user-show-wrapper-user-container-links">
             <% if @user == current_user %>
               <%= link_to "Edit", edit_user_registration_path, class:"btn_skinny" %>
+            <% else %>
+              <%= mail_to @user.email, "Contact", class:"btn_skinny" %>
             <% end %>
           </div>
         </div>
@@ -36,9 +38,8 @@
                   <div class="user-show-wrapper-meal-container-card" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 99.99%, rgba(255, 255, 255, 0) 100%), url('<%= cl_image_path prep.photo %>')">
                     <div class="user-show-wrapper-meal-container-card-name">
                       <h4><%= prep.name %></h4>
-                    </div>
-                    <div class="user-show-wrapper-meal-container-card-taglist">
-                      <p><%= prep.tag_list.join(", ") %></p>
+                      <p><%= prep.nicetime %></p>
+                      <p><%= prep.location %></p>
                     </div>
                   </div>
                 <% end %>
