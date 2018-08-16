@@ -105,18 +105,20 @@
   position: relative;
   display: flex;
   justify-content: space-around;
-  .landing_why-prep-body {
-    text-align: center;
-    justify-content: center;
-    color: white;
-    width: 80%;
-    font-weight: light;
-    font-size: 16px;
-    h1 {
-      font-weight: bolder;
-    }
+}
+
+.landing_why-prep-body {
+  text-align: center;
+  justify-content: center;
+  color: white;
+  width: 80%;
+  font-weight: light;
+  font-size: 16px;
+  h1 {
+    font-weight: bolder;
   }
 }
+
 
 .landing_example-wrapper {
     height: 70vh;
@@ -148,6 +150,7 @@
     align-content: center;
     display: flex;
     justify-content: space-around;
+}
   .landing_friends-prep-body {
     text-align: center;
     justify-content: center;
@@ -159,7 +162,6 @@
       font-weight: bolder;
     }
   }
-}
 
 .landing_bottom-container {
 }
@@ -168,4 +170,29 @@
 .review-text {
   width: 100%;
   margin-bottom: 10px;
+}
+
+@media (max-width: 414px) {
+.landing_why-prep-card {
+  width: 60%;
+}
+.landing_friends-prep-card {
+  width: 60%;
+}
+.landing_why-prep-body {
+p {
+  font-size: 12px;
+}
+h1 {
+  font-size: 20px;
+}
+}
+.landing_friends-prep-body {
+p {
+  font-size: 12px;
+}
+h1 {
+  font-size: 20px;
+}
+}
 }
