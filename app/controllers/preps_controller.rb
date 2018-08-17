@@ -3,7 +3,7 @@ class PrepsController < ApplicationController
 
   def index
     @preps = policy_scope(Prep)
-    @preps = Prep.where.not(latitude: nil, longitude: nil)
+    @preps = Prep.all
     @markers = @preps.map do |prep|
       {
         lat: prep.latitude,
